@@ -1,5 +1,0 @@
-[wabi] third-party assets
-Inter 4.1 — SIL Open Font License (see assets/fonts/inter/LICENSE.txt)
-Archivo Black — SIL Open Font License (see assets/fonts/archivo-black/OFL.txt)
-Font Awesome Free SVG icons — see assets/icons/LICENSE-FONTAWESOME.txt
-html2canvas 1.4.1 — pinned runtime dependency; local vendor path prepared.
