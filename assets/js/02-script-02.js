@@ -1,0 +1,1 @@
+window.wabi = window.wabi || {};
