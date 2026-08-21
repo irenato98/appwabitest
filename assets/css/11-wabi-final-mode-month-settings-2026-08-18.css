@@ -1,0 +1,7 @@
+.wabi-modes-disabled::after,.wabi-mode-disabled::after,.mode-pill.wabi-mode-disabled::after{display:none!important;content:none!important}
+[data-wabi-mode="relax"],[data-wabi-mode="intense"],[data-mood-btn="relax"],[data-mood-btn="intense"]{opacity:.28!important;filter:blur(.35px) grayscale(.18)!important;pointer-events:none!important;cursor:default!important;box-shadow:none!important}
+[data-wabi-mode="normal"],[data-mood-btn="normal"]{opacity:1!important;filter:none!important;pointer-events:none!important;font-weight:720!important}
+.wabi-signout-danger{color:var(--danger-500)!important}.wabi-signout-danger:hover{background:rgba(217,63,63,.08)!important}
+.wabi-btn.danger{color:var(--danger-500)!important;border-color:rgba(217,63,63,.22)!important;background:rgba(217,63,63,.055)!important}.wabi-btn.danger:hover{background:rgba(217,63,63,.11)!important}
+/* Month header/grid use the same actual content width; JS below compensates only for a visible scrollbar. */
+.wabi-month-grid-head{box-sizing:border-box!important}

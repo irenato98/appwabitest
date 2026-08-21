@@ -1,0 +1,31 @@
+/* A card that shares time with another keeps its temporal height but uses a
+   calm title-only interior. Only horizontal width changes to 50/50. */
+.wabi-day-event.is-overlap .wabi-card-check,
+.wabi-week-event.is-overlap .wabi-card-check,
+.wabi-day-event.is-overlap .wabi-time-chip,
+.wabi-week-event.is-overlap .wabi-time-chip,
+.wabi-day-event.is-overlap .wabi-card-inline-symbols,
+.wabi-week-event.is-overlap .wabi-card-inline-symbols,
+.wabi-day-event.is-overlap .wabi-card-symbol-row,
+.wabi-week-event.is-overlap .wabi-card-symbol-row,
+.wabi-day-event.is-overlap .wabi-card-compact-meta,
+.wabi-week-event.is-overlap .wabi-card-compact-meta{display:none!important}
+.wabi-day-event.is-overlap .wabi-card-main,
+.wabi-week-event.is-overlap .wabi-card-main{display:flex!important;width:100%!important;min-width:0!important;gap:0!important;align-items:center!important}
+.wabi-day-event.is-overlap .wabi-card-title,
+.wabi-week-event.is-overlap .wabi-card-title{display:block!important;flex:1 1 auto!important;min-width:0!important;width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+
+/* During a valid drag, keep each existing card in its computed stable lane. */
+.wabi-day-event.is-drag-overlap-right,
+.wabi-week-event.is-drag-overlap-right{
+  left:calc(50% + 2px)!important;width:calc(50% - 6px)!important;right:auto!important;
+  transition:left 110ms ease,width 110ms ease!important;
+}
+.wabi-drag-slot-preview.is-overlap-left{left:4px!important;right:auto!important;width:calc(50% - 6px)!important}
+.wabi-drag-slot-preview.is-overlap-right{left:calc(50% + 2px)!important;right:auto!important;width:calc(50% - 6px)!important}
+
+/* Invalid third-overlap drops never rerender neighbours; only the source gives
+   a short, local return cue before settling back in its original slot. */
+@keyframes wabi-card-rebound{0%{transform:translateY(0)}38%{transform:translateY(-3px)}100%{transform:translateY(0)}}
+.wabi-day-event.is-drag-rebound,.wabi-week-event.is-drag-rebound{animation:wabi-card-rebound 220ms ease-out}
+@media (prefers-reduced-motion:reduce){.wabi-day-event.is-drag-rebound,.wabi-week-event.is-drag-rebound{animation:none}.wabi-day-event.is-drag-overlap-right,.wabi-week-event.is-drag-overlap-right{transition:none!important}}

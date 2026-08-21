@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/><meta content="[wabi] te ayuda a organizar tu tiempo con actividades flexibles, horas fijas y foco." name="description"/><meta content="#f5f5f7" id="wabi-theme-color" name="theme-color"/><link href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9IiM1YjZjYTMiLz48dGV4dCB4PSIzMiIgeT0iNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjI5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+W3ddPC90ZXh0Pjwvc3ZnPg==" rel="icon" type="image/svg+xml"/><link href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTUiIGZpbGw9IiM1YjZjYTMiLz48dGV4dCB4PSIzMiIgeT0iNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjI5IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSJ3aGl0ZSI+W3ddPC90ZXh0Pjwvc3ZnPg==" rel="apple-touch-icon"/>
+<title>[wabi]™ — Organiza tu tiempo a tu manera</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Open+Sans:wght@700&amp;display=swap" rel="stylesheet"/>
+<!-- Vista interna corregida: desktop-only · 2026-08-16 -->
+<link rel="stylesheet" id="wabi-local-svg-fa-shim" href="assets/css/00-wabi-local-svg-fa-shim.css">
+<link rel="stylesheet" href="assets/css/01-style.css">
+<link rel="stylesheet" id="wabi-apple-beta-style" href="assets/css/02-wabi-apple-beta-style.css">
+<link rel="stylesheet" id="wabi-create-v3-styles" href="assets/css/03-wabi-create-v3-styles.css">
+<link rel="stylesheet" id="wabi-week-feedback-only-fix-2026" href="assets/css/04-wabi-week-feedback-only-fix-2026.css">
+<link rel="stylesheet" id="wabi-last-request-fixes" href="assets/css/05-wabi-last-request-fixes.css">
+<link rel="stylesheet" id="wabi-timeline-cards-reference-fix-2026" href="assets/css/06-wabi-timeline-cards-reference-fix-2026.css">
+<link rel="stylesheet" id="wabi-card-overlap-hover-drag-fix-2026" href="assets/css/07-wabi-card-overlap-hover-drag-fix-2026.css">
+<link rel="stylesheet" id="wabi-requested-functional-fixes-2026" href="assets/css/08-wabi-requested-functional-fixes-2026.css">
+<link rel="stylesheet" id="wabi-compact-form-close-bar-2026-08-17" href="assets/css/09-wabi-compact-form-close-bar-2026-08-17.css">
+<link rel="stylesheet" id="wabi-settings-beta-data-blocks-patch-2026-08-18" href="assets/css/10-wabi-settings-beta-data-blocks-patch-2026-08-18.css">
+<link rel="stylesheet" id="wabi-final-mode-month-settings-2026-08-18" href="assets/css/11-wabi-final-mode-month-settings-2026-08-18.css">
+<script id="wabi-product-config-2026-08-19" src="assets/js/00-wabi-product-config-2026-08-19.js"></script>
+</head>
+<body>
+<div class="app" id="app">
+<header class="titlebar" role="banner">
+<div class="titlebar-left">
+<button aria-label="Menú" class="btn-burger only-mobile" id="btn-burger">
+<i class="fa-solid fa-bars"></i>
+</button>
+<div aria-label="[wabi]™" class="brand-mark">
+<span class="brand-wordmark"><span class="brand-bracket">[</span>wabi<span class="brand-bracket">]</span></span>
+</div>
+<div class="date-nav only-desktop" role="group">
+<button aria-label="Anterior" class="btn-date-arrow" id="btn-prev"><i class="fa-solid fa-chevron-left"></i></button>
+<button class="btn-today" id="btn-today">Hoy</button>
+<button aria-label="Siguiente" class="btn-date-arrow" id="btn-next"><i class="fa-solid fa-chevron-right"></i></button>
+<span class="date-nav-label" id="current-date"></span>
+</div>
+<div class="seg only-desktop" role="tablist">
+<button aria-pressed="true" class="seg-btn" data-filter-desktop="all" role="tab">Todas</button>
+<button aria-pressed="false" class="seg-btn" data-filter-desktop="pending" role="tab">Pendientes</button>
+<button aria-pressed="false" class="seg-btn" data-filter-desktop="done" role="tab">Hechas</button>
+</div>
+</div>
+<div class="titlebar-right">
+<div aria-label="Modo" class="seg only-desktop" role="group">
+<button aria-pressed="false" class="seg-btn" data-mood-btn="relax"><i class="fa-solid fa-leaf" style="font-size:10px;margin-right:3px;color:var(--relax-fg);"></i>Relax</button>
+<button aria-pressed="true" class="seg-btn" data-mood-btn="normal">Normal</button>
+<button aria-pressed="false" class="seg-btn" data-mood-btn="intense"><i class="fa-solid fa-bolt" style="font-size:10px;margin-right:3px;color:var(--intense-fg);"></i>Intense</button>
+</div>
+<button class="mode-pill only-mobile" data-mode="normal" id="mode-pill">
+<span class="mode-dot"></span>
+<span class="mode-label">Normal</span>
+<i class="fa-solid fa-chevron-down caret"></i>
+</button>
+<button aria-label="Cambiar tema" class="tb-icon" data-action="toggle-theme" title="Cambiar tema">
+<i class="fa-solid fa-moon"></i>
+</button>
+</div>
+</header>
+<div class="main">
+<aside class="sidebar" id="sidebar" role="navigation">
+<div class="sidebar-mobile-head only-mobile">
+<div aria-label="[wabi]™" class="brand-mark">
+<span class="brand-wordmark"><span class="brand-bracket">[</span>wabi<span class="brand-bracket">]</span></span>
+</div>
+<button aria-label="Cerrar" class="tb-icon" data-action="close-sidebar"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<div class="sidebar-section">Vistas</div>
+<button class="nav-item is-active" data-view="board">
+<span class="nav-icon"><i class="fa-solid fa-table-columns"></i></span><span class="nav-label">Semana</span>
+</button>
+<button class="nav-item" data-view="month">
+<span class="nav-icon"><i class="fa-solid fa-calendar"></i></span><span class="nav-label">Mes</span>
+</button>
+<div class="sidebar-section">Categorías</div>
+<button class="nav-item"><span class="nav-icon"><span class="tag-dot" style="background:#d97706"></span></span><span class="nav-label">#trabajo</span></button>
+<button class="nav-item"><span class="nav-icon"><span class="tag-dot" style="background:#7c3aed"></span></span><span class="nav-label">#personal</span></button>
+<button class="nav-item"><span class="nav-icon"><span class="tag-dot" style="background:#059669"></span></span><span class="nav-label">#casa</span></button>
+<button class="nav-item"><span class="nav-icon"><span class="tag-dot" style="background:#0891b2"></span></span><span class="nav-label">#estudio</span></button>
+<button class="nav-item"><span class="nav-icon"><span class="tag-dot" style="background:#db2777"></span></span><span class="nav-label">#salud</span></button>
+<div class="sidebar-footer">
+<div class="theme-toggle-row">
+<span class="theme-toggle-label"><i class="fa-solid fa-moon"></i> Tema oscuro</span>
+<button aria-label="Tema" class="theme-switch" id="theme-switch-sidebar">
+<div class="theme-switch-track">
+<i class="fa-solid fa-sun theme-switch-icon theme-switch-icon--sun"></i>
+<i class="fa-solid fa-moon theme-switch-icon theme-switch-icon--moon"></i>
+<span class="theme-switch-thumb"></span>
+</div>
+</button>
+</div>
+<button class="nav-item" data-action="new-task">
+<span class="nav-icon"><i class="fa-solid fa-plus"></i></span><span class="nav-label">Nueva tarea</span>
+</button>
+<button class="nav-item" data-action="show-onboarding">
+<span class="nav-icon"><i class="fa-regular fa-circle-question"></i></span><span class="nav-label">Ayuda / Tour</span>
+</button>
+</div>
+</aside>
+<div class="sidebar-scrim" id="sidebar-scrim"></div>
+<div id="desktop-content-wrap">
+<div class="content" id="content" style="display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden;"></div>
+<div class="detail" id="detail" style="flex-direction:column;overflow-y:auto;"></div>
+</div>
+<div id="mobile-content-wrap">
+<div id="mobile-content"></div>
+<div class="detail" id="detail-mobile" style="flex-direction:column;overflow-y:auto;"></div>
+</div>
+</div>
+<nav class="tabbar only-mobile" role="tablist">
+<button class="tabbar-btn is-active" data-tab="board">
+<span class="tabbar-btn-icon"><i class="fa-solid fa-calendar-week"></i></span>Semana
+    </button>
+<button class="tabbar-btn" data-tab="month">
+<span class="tabbar-btn-icon"><i class="fa-solid fa-calendar"></i></span>Mes
+    </button>
+<button class="tabbar-btn" data-tab="help">
+<span class="tabbar-btn-icon"><i class="fa-regular fa-circle-question"></i></span>Guía
+    </button>
+</nav>
+</div>
+<div aria-modal="true" class="scrim is-hidden" id="modal-scrim" role="dialog"></div>
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+<script src="assets/js/01-script.js"></script>
+<script src="assets/js/02-script.js"></script>
+<script src="assets/js/03-script.js"></script>
+<script src="assets/js/04-script.js"></script>
+<script src="assets/js/05-script.js"></script>
+<script src="assets/js/06-script.js"></script>
+<script src="assets/js/07-script.js"></script>
+<script src="assets/js/08-script.js"></script>
+<script src="assets/js/09-script.js"></script>
+<script id="wabi-apple-beta-script" src="assets/js/10-wabi-apple-beta-script.js"></script>
+<link rel="stylesheet" id="wabi-internal-redesign-2026" href="assets/css/12-wabi-internal-redesign-2026.css">
+<script id="wabi-internal-redesign-2026-js" src="assets/js/11-wabi-internal-redesign-2026-js.js"></script>
+<link rel="stylesheet" id="wabi-requested-card-view-drag-fixes-2026-08-17" href="assets/css/13-wabi-requested-card-view-drag-fixes-2026-08-17.css">
+<link rel="stylesheet" id="wabi-calendar-alignment-card-layout-polish-2026-08-17" href="assets/css/14-wabi-calendar-alignment-card-layout-polish-2026-08-17.css">
+<link rel="stylesheet" id="wabi-final-calendar-safety-editor-fixes-2026-08-17" href="assets/css/15-wabi-final-calendar-safety-editor-fixes-2026-08-17.css">
+<link rel="stylesheet" id="wabi-final-focus-month-block-safety-2026-08-17" href="assets/css/16-wabi-final-focus-month-block-safety-2026-08-17.css">
+<link rel="stylesheet" id="wabi-regression-stability-fixes-2026-08-17" href="assets/css/17-wabi-regression-stability-fixes-2026-08-17.css">
+<link rel="stylesheet" id="wabi-source-truth-card-layout-final-2026-08-17" href="assets/css/18-wabi-source-truth-card-layout-final-2026-08-17.css">
+<link rel="stylesheet" id="wabi-targeted-month-slot-card-fixes-2026-08-17" href="assets/css/19-wabi-targeted-month-slot-card-fixes-2026-08-17.css">
+<link rel="stylesheet" id="wabi-authoritative-card-scheduling-category-min30-2026-08-17" href="assets/css/20-wabi-authoritative-card-scheduling-category-min30-2026-08-17.css">
+<link rel="stylesheet" id="wabi-normal-only-drag-live-overlap-mode-motion-2026-08-18" href="assets/css/21-wabi-normal-only-drag-live-overlap-mode-motion-2026-08-18.css">
+<link rel="stylesheet" id="wabi-atomic-overlap-stable-lanes-title-only-2026-08-18" href="assets/css/22-wabi-atomic-overlap-stable-lanes-title-only-2026-08-18.css">
+<link rel="stylesheet" id="wabi-shift-multidrag-hover-completion-ai-timer-2026-08-18" href="assets/css/23-wabi-shift-multidrag-hover-completion-ai-timer-2026-08-18.css">
+<link rel="stylesheet" id="wabi-ai-chat-spacious-2026-08-18" href="assets/css/24-wabi-ai-chat-spacious-2026-08-18.css">
+<link rel="stylesheet" id="wabi-normal-only-disabled-2026-08-18" href="assets/css/25-wabi-normal-only-disabled-2026-08-18.css">
+<script id="wabi-normal-only-lock-2026-08-18" src="assets/js/12-wabi-normal-only-lock-2026-08-18.js"></script>
+<link rel="stylesheet" id="wabi-onboarding-working-2026-08-18" href="assets/css/26-wabi-onboarding-working-2026-08-18.css">
+<script id="wabi-onboarding-working-script-2026-08-18" src="assets/js/13-wabi-onboarding-working-script-2026-08-18.js"></script>
+<script id="wabi-final-regression-guards-2026-08-18" src="assets/js/14-wabi-final-regression-guards-2026-08-18.js"></script>
+<link rel="stylesheet" id="wabi-final-stability-2026-08-20-v13" href="assets/css/27-wabi-final-stability-2026-08-20-v13.css">
+<script id="wabi-final-stability-script-2026-08-21-v16" src="assets/js/15-wabi-final-stability-script-2026-08-21-v16.js"></script>
+</body>
+</html>

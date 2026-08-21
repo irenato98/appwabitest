@@ -1,0 +1,24 @@
+/* While a flexible card is being positioned over another in Normal, show the
+   final lane result before drop: existing card left, dragged preview right. */
+.wabi-day-event.is-drag-overlap-left,
+.wabi-week-event.is-drag-overlap-left{
+  left:4px!important;
+  width:calc(50% - 6px)!important;
+  right:auto!important;
+  transition:left 110ms ease,width 110ms ease!important;
+}
+.wabi-drag-slot-preview{transition:left 110ms ease,width 110ms ease,right 110ms ease!important;}
+
+/* Title-only really means title-only at the small-card breakpoint. */
+.wabi-day-event.is-tiny .wabi-card-main,
+.wabi-week-event.is-tiny .wabi-card-main{gap:0!important;}
+.wabi-day-event.is-tiny .wabi-card-title,
+.wabi-week-event.is-tiny .wabi-card-title{width:100%!important;}
+
+/* The mode movement itself is animated with the Web Animations API; this keeps
+   normal hover/card transforms untouched and avoids adding permanent motion. */
+@media (prefers-reduced-motion: reduce){
+  .wabi-day-event.is-drag-overlap-left,
+  .wabi-week-event.is-drag-overlap-left,
+  .wabi-drag-slot-preview{transition:none!important;}
+}

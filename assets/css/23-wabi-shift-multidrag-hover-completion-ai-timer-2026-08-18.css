@@ -1,0 +1,31 @@
+/* Completion lives in Hover now; cards themselves never reserve check space. */
+.wabi-task-card .wabi-card-check{display:none!important}
+.wabi-card-hover-done{
+  width:30px;height:30px;flex:0 0 30px;border-radius:9px;border:1px solid var(--hairline);
+  background:var(--bg-elev-0);color:var(--text-faint);display:grid;place-items:center;font-size:10px;
+  transition:background var(--t-fast),border-color var(--t-fast),color var(--t-fast),transform var(--t-fast);
+}
+.wabi-card-hover-done:hover{border-color:rgba(31,157,98,.34);color:#177b4d;background:rgba(31,157,98,.06)}
+.wabi-card-hover-done.is-done{background:var(--success-500);border-color:var(--success-500);color:#fff}
+.wabi-card-hover-comparison{margin-top:9px;padding:8px 9px;border-radius:9px;background:var(--bg-elev-1);color:var(--text-muted);display:flex;gap:7px;align-items:flex-start;font-size:10.5px;line-height:1.35}
+.wabi-card-hover-comparison i{margin-top:1px;color:var(--success-500)}
+
+
+/* Calm estimated-time alert inside Focus; the timer keeps running on Seguir. */
+.wabi-focus-estimate-slot:empty{display:none}
+.wabi-focus-estimate-alert{margin-top:-18px;padding:13px 15px;border:1px solid color-mix(in srgb,var(--brand-500) 20%,var(--hairline));border-radius:14px;background:color-mix(in srgb,var(--brand-50) 58%,var(--bg-elev-0));display:flex;align-items:center;justify-content:space-between;gap:18px;animation:popoverIn var(--t-fast) both}
+.wabi-focus-estimate-alert>div:first-child{display:flex;flex-direction:column;gap:3px;min-width:0}.wabi-focus-estimate-alert strong{font-size:11.5px;font-weight:750}.wabi-focus-estimate-alert span{font-size:10.5px;color:var(--text-muted)}
+.wabi-focus-estimate-actions{display:flex;gap:7px;flex:0 0 auto}.wabi-focus-estimate-actions button{height:31px;padding:0 11px;border:1px solid var(--hairline);border-radius:9px;background:var(--bg-elev-0);font-size:10.5px;font-weight:700;color:var(--text-muted)}
+.wabi-focus-estimate-actions button.done{border-color:rgba(31,157,98,.25);background:rgba(31,157,98,.10);color:#177b4d}
+
+/* [w] opens in the same bottom-right family as Nueva Actividad. */
+.wabi-ai-scrim{position:fixed;inset:0;z-index:49000;background:rgba(18,19,25,.09);-webkit-backdrop-filter:blur(2px) saturate(104%);backdrop-filter:blur(2px) saturate(104%);opacity:0;transition:opacity .15s ease}
+.wabi-ai-scrim.on{opacity:1}
+.wabi-ai-panel{position:absolute;right:20px;bottom:88px;width:min(460px,calc(100vw - 40px));height:min(620px,calc(100vh - 116px));display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--glass-stroke,var(--hairline));border-radius:18px;background:var(--glass-strong,var(--bg-elev-0));box-shadow:var(--sh-pop);transform-origin:calc(100% - 26px) 100%;animation:wabiCreateFromFab .18s cubic-bezier(.2,.8,.2,1) both}
+.wabi-ai-scrim::after{content:"";position:absolute;right:38px;bottom:78px;width:16px;height:16px;background:var(--glass-strong,var(--bg-elev-0));border-right:1px solid var(--glass-stroke,var(--hairline));border-bottom:1px solid var(--glass-stroke,var(--hairline));transform:rotate(45deg);pointer-events:none}
+.wabi-ai-head{height:44px;flex:0 0 44px;padding:0 11px 0 14px;background:var(--bg-elev-1);border-bottom:1px solid var(--hairline-soft);display:flex;align-items:center;justify-content:space-between;color:var(--text-muted);font-size:11px;font-weight:700}
+.wabi-ai-head>div{display:flex;align-items:center;gap:7px}.wabi-ai-mark{font-family:var(--font-serif);font-size:14px;color:var(--brand-600)}.wabi-ai-head button{width:30px;height:30px;border-radius:9px;color:var(--text-faint)}.wabi-ai-head button:hover{background:var(--bg-hover);color:var(--text)}
+.wabi-ai-body{flex:1 1 auto;min-height:0;padding:18px;display:flex;flex-direction:column;gap:13px;overflow:hidden}.wabi-ai-messages{flex:1 1 auto;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:9px;padding-right:2px}.wabi-ai-message{max-width:88%;padding:9px 11px;border-radius:13px;font-size:11.5px;line-height:1.45;white-space:pre-wrap}.wabi-ai-message.assistant{align-self:flex-start;background:var(--bg-elev-1);color:var(--text)}.wabi-ai-message.user{align-self:flex-end;background:var(--brand-500);color:#fff}.wabi-ai-message.is-thinking{min-width:38px;text-align:center;color:var(--text-faint)}
+.wabi-ai-suggestions{display:flex;gap:7px;flex-wrap:wrap}.wabi-ai-suggestions button{height:34px;padding:0 11px;border:1px solid var(--hairline);border-radius:10px;background:var(--bg-elev-0);color:var(--text-muted);font-size:10.5px;font-weight:700;display:flex;align-items:center;gap:6px}.wabi-ai-suggestions button:hover{background:var(--bg-hover);color:var(--text);border-color:var(--hairline-strong)}
+.wabi-ai-compose{flex:0 0 auto;margin:0 14px 14px;padding:7px 7px 7px 11px;border:1px solid var(--hairline);border-radius:14px;background:var(--bg-elev-0);display:flex;align-items:flex-end;gap:7px}.wabi-ai-compose textarea{flex:1;min-height:28px;max-height:100px;resize:none;border:0;outline:0;background:transparent;color:var(--text);font:inherit;font-size:11.5px;line-height:1.4;padding:6px 0}.wabi-ai-compose button{width:30px;height:30px;border-radius:9px;background:var(--brand-500);color:white;display:grid;place-items:center;font-size:10px}
+@media(prefers-reduced-motion:reduce){.wabi-ai-panel,.wabi-focus-estimate-alert{animation:none!important}}

@@ -1,0 +1,168 @@
+/* Single metadata grammar: title + optional Day/panel time + one symbol set.
+   Older duplicate metadata containers are not used by the new markup. */
+.wabi-card-inline-symbols,.wabi-card-symbol-row{
+  align-items:center;
+  justify-content:flex-end;
+  gap:7px;
+  white-space:nowrap;
+  min-width:0;
+  color:var(--text-muted);
+  font-size:9px;
+  line-height:1;
+}
+.wabi-card-symbol{display:inline-flex;align-items:center;gap:3px;flex:0 0 auto;}
+.wabi-card-symbol i{font-size:9px;}
+.wabi-card-symbol.category{font-size:11px;font-weight:850;line-height:1;}
+.wabi-card-symbol.subtasks span{font-size:8.5px;font-weight:650;}
+
+/* DAY + WEEK: stable card shells. */
+.wabi-day-event>.wabi-task-card,
+.wabi-week-event>.wabi-task-card{
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+.wabi-day-event .wabi-card-main,
+.wabi-week-event .wabi-card-main{
+  display:flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  min-width:0!important;
+  width:100%!important;
+}
+.wabi-day-event .wabi-card-title,
+.wabi-week-event .wabi-card-title{
+  flex:1 1 auto!important;
+  min-width:24px!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+.wabi-day-event .wabi-card-symbol-row,
+.wabi-week-event .wabi-card-symbol-row{
+  display:flex!important;
+  margin:auto 1px 0 21px!important;
+  padding-top:3px!important;
+}
+.wabi-day-event .wabi-card-inline-symbols,
+.wabi-week-event .wabi-card-inline-symbols{display:none!important;}
+.wabi-day-event .wabi-time-chip{
+  display:inline-flex!important;
+  margin-left:auto!important;
+  flex:0 0 auto!important;
+}
+.wabi-week-event .wabi-time-chip{display:none!important;}
+
+/* Small height: one clean row. Day keeps estimated/fixed time; Week keeps
+   title + symbols only. */
+.wabi-day-event.is-tiny>.wabi-task-card,
+.wabi-week-event.is-tiny>.wabi-task-card{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  padding:4px 9px!important;
+}
+.wabi-day-event.is-tiny .wabi-card-check,
+.wabi-week-event.is-tiny .wabi-card-check{display:none!important;}
+.wabi-day-event.is-tiny .wabi-card-symbol-row,
+.wabi-week-event.is-tiny .wabi-card-symbol-row{display:none!important;}
+.wabi-day-event.is-tiny .wabi-card-inline-symbols,
+.wabi-week-event.is-tiny .wabi-card-inline-symbols{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  margin-left:3px!important;
+}
+.wabi-day-event.is-tiny .wabi-time-chip{
+  height:auto!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  font-size:8.5px!important;
+  line-height:1!important;
+}
+.wabi-day-event.is-tiny .wabi-time-chip i{display:none!important;}
+.wabi-week-event.is-tiny .wabi-time-chip{display:none!important;}
+
+/* Intermediate: explicit compact state, preventing collision between the two
+   rows while keeping every item inside the card's safety margins. */
+.wabi-day-event.is-tight>.wabi-task-card,
+.wabi-week-event.is-tight>.wabi-task-card{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+  padding:5px 9px!important;
+}
+.wabi-day-event.is-tight .wabi-card-main,
+.wabi-week-event.is-tight .wabi-card-main{min-height:17px!important;}
+.wabi-day-event.is-tight .wabi-card-title,
+.wabi-week-event.is-tight .wabi-card-title{
+  font-size:10.5px!important;
+  line-height:1.05!important;
+}
+.wabi-day-event.is-tight .wabi-time-chip{
+  height:17px!important;
+  padding:0 4px!important;
+  font-size:8.5px!important;
+}
+.wabi-day-event.is-tight .wabi-card-symbol-row,
+.wabi-week-event.is-tight .wabi-card-symbol-row{
+  padding-top:2px!important;
+  margin-left:20px!important;
+  gap:6px!important;
+}
+
+/* Roomy cards: same fixed positions, more breathing room. */
+.wabi-day-event:not(.is-tiny):not(.is-tight)>.wabi-task-card,
+.wabi-week-event:not(.is-tiny):not(.is-tight)>.wabi-task-card{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-start!important;
+  padding:7px 10px!important;
+}
+.wabi-day-event:not(.is-tiny):not(.is-tight) .wabi-card-title,
+.wabi-week-event:not(.is-tiny):not(.is-tight) .wabi-card-title{
+  font-size:11px!important;
+  line-height:1.12!important;
+}
+
+/* Completed cards keep an opaque surface; only their content softens. */
+.wabi-task-card.is-done{opacity:1!important;background:var(--bg-elev-0)!important;}
+.wabi-task-card.is-done .wabi-card-main,
+.wabi-task-card.is-done .wabi-card-symbol-row{opacity:.52!important;}
+
+/* Month-day drawer: the same activity data, one compact representation, no
+   duplicate icon rows. Hover/Edit/Start is still available here. */
+.wabi-month-day-panel-list>.wabi-task-card{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:58px!important;
+  padding:9px 10px!important;
+  overflow:hidden!important;
+}
+.wabi-month-day-panel-list .wabi-card-main{
+  display:flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  min-width:0!important;
+}
+.wabi-month-day-panel-list .wabi-card-title{
+  flex:1 1 auto!important;
+  min-width:24px!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+.wabi-month-day-panel-list .wabi-time-chip{
+  display:inline-flex!important;
+  margin-left:auto!important;
+  flex:0 0 auto!important;
+}
+.wabi-month-day-panel-list .wabi-card-inline-symbols{display:none!important;}
+.wabi-month-day-panel-list .wabi-card-symbol-row{
+  display:flex!important;
+  justify-content:flex-end!important;
+  margin:7px 1px 0 20px!important;
+  gap:7px!important;
+}
+
+/* Main Month intentionally has no hover affordance. */
+.wabi-month-grid .wabi-month-event{cursor:default!important;}

@@ -1,0 +1,6 @@
+/* Normal is the only executable planning mode for this beta. Energy metadata remains stored for future reactivation. */
+.wabi-modes-disabled{position:relative!important;user-select:none!important}
+.wabi-modes-disabled [data-mood-btn="relax"],.wabi-modes-disabled [data-mood-btn="intense"]{opacity:.28!important;filter:blur(.35px) grayscale(.18)!important;pointer-events:none!important;cursor:default!important;box-shadow:none!important}
+.wabi-modes-disabled [data-mood-btn="normal"]{opacity:1!important;filter:none!important;pointer-events:none!important;color:var(--text)!important;background:var(--bg-elev-0)!important;box-shadow:var(--sh-1)!important;font-weight:720!important}
+.mode-pill.wabi-mode-disabled{pointer-events:none!important;cursor:default!important}
+.wabi-integration-logo .wabi-brand-svg{width:27px;height:27px;display:block}

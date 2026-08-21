@@ -1,0 +1,11 @@
+.wabi-integration-logo{font-size:19px;display:grid!important;place-items:center!important;background:var(--bg-elev-0)!important}
+.wabi-integration-logo .fa-google{color:#4285f4}.wabi-integration-logo .fa-microsoft{color:#5e5e5e}.wabi-integration-logo .fa-apple{color:var(--text)}.wabi-integration-logo .fa-notion{color:var(--text)}
+.wabi-ics-logo{font-size:15px;display:grid!important;place-items:center!important;color:var(--brand-500)}
+.wabi-language-seg{display:inline-flex;padding:3px;border:1px solid var(--hairline);background:var(--bg-elev-1);border-radius:10px;gap:2px}
+.wabi-language-seg button{height:30px;padding:0 11px;border-radius:8px;font-size:11px;color:var(--text-muted)}
+.wabi-language-seg button.is-selected{background:var(--bg-elev-0);color:var(--text);font-weight:650;box-shadow:var(--sh-1)}
+.wabi-block-readonly-head{padding:2px 0 14px}.wabi-block-title-line{display:flex;align-items:center;gap:8px;font-size:14px}.wabi-block-readonly-head p{font-size:11px;color:var(--text-muted);line-height:1.55;margin-top:5px;max-width:520px}
+.wabi-soon-badge{font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border-radius:999px;background:var(--bg-elev-2);border:1px solid var(--hairline);color:var(--text-muted)}
+.wabi-block-readonly-list{border:1px solid var(--hairline);border-radius:12px;overflow:hidden;background:var(--bg-elev-0)}
+.wabi-block-readonly-row{display:grid;grid-template-columns:36px 1fr;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--hairline-soft)}.wabi-block-readonly-row:last-child{border-bottom:0}
+.wabi-block-readonly-row .wabi-block-key{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--bg-elev-1);border:1px solid var(--hairline);font-size:11px;font-weight:750}.wabi-block-readonly-row strong{display:block;font-size:12px}.wabi-block-readonly-row small{display:block;font-size:10.5px;color:var(--text-muted);margin-top:2px}

@@ -1,0 +1,111 @@
+/* Requested card-only refinements. This block is intentionally last so it
+   overrides only the targeted card/view rules without changing app logic. */
+
+/* No category micro-tooltip / question-mark cursor inside cards. */
+.wabi-category-hash{
+  position:static!important;
+  cursor:inherit!important;
+  padding:1px 2px!important;
+}
+.wabi-category-hash::after{display:none!important;content:none!important}
+
+/* Week: name is always visible and semantic symbols sit below it.
+   No estimated duration, fixed time, lock/time chip, or duplicate metadata. */
+.wabi-week-symbol-row{display:none}
+.wabi-week-event .wabi-time-chip,
+.wabi-week-event.is-tight .wabi-time-chip,
+.wabi-week-event.is-tiny .wabi-time-chip,
+.wabi-week-event .wabi-card-meta,
+.wabi-week-event.is-tight .wabi-card-meta,
+.wabi-week-event.is-tiny .wabi-card-meta,
+.wabi-week-event .wabi-card-compact-meta,
+.wabi-week-event.is-tight .wabi-card-compact-meta,
+.wabi-week-event.is-tiny .wabi-card-compact-meta{
+  display:none!important;
+}
+.wabi-week-event .wabi-week-symbol-row{
+  display:flex!important;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+  margin:2px 0 0 18px;
+  font-size:8.5px;
+  line-height:1;
+  color:var(--text-muted);
+  white-space:nowrap;
+}
+.wabi-week-event .wabi-week-symbol-row .compact-sub{display:inline-flex;align-items:center;gap:2px}
+.wabi-week-event .wabi-week-symbol-row .compact-cat{font-size:11px;font-weight:850}
+.wabi-week-event .wabi-card-main{min-width:0!important}
+.wabi-week-event .wabi-card-title,
+.wabi-week-event.is-tight .wabi-card-title,
+.wabi-week-event.is-tiny .wabi-card-title{
+  display:block!important;
+  flex:1 1 auto!important;
+  min-width:18px!important;
+}
+.wabi-week-event.is-tiny .wabi-task-card{padding:2px 5px 2px 7px!important}
+.wabi-week-event.is-tiny .wabi-card-title{font-size:9.5px!important}
+.wabi-week-event.is-tiny .wabi-week-symbol-row{margin-top:1px!important;font-size:7.5px!important;gap:5px!important}
+
+/* Day: a very thin card still keeps its time/fixed range or estimated duration,
+   plus semantic symbols, on the same horizontal line. */
+.wabi-day-event .wabi-week-symbol-row{display:none!important}
+.wabi-day-event.is-tiny .wabi-card-meta{display:none!important}
+.wabi-day-event.is-tiny .wabi-card-main{
+  display:flex!important;
+  align-items:center!important;
+  gap:5px!important;
+  height:100%!important;
+  min-width:0!important;
+}
+.wabi-day-event.is-tiny .wabi-card-title{
+  display:block!important;
+  flex:1 1 auto!important;
+  min-width:24px!important;
+}
+.wabi-day-event.is-tiny .wabi-time-chip{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  height:16px!important;
+  padding:0 4px!important;
+  font-size:8px!important;
+  border:0!important;
+  background:transparent!important;
+}
+.wabi-day-event.is-tiny .wabi-time-chip i{display:inline-block!important;font-size:7px!important}
+.wabi-day-event.is-tiny .wabi-card-compact-meta{
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  gap:5px!important;
+}
+
+/* Month: title hard-left, one symbol group hard-right. */
+.wabi-month-event{
+  justify-content:flex-start!important;
+  text-align:left!important;
+}
+.wabi-month-event .event-title{
+  flex:1 1 auto!important;
+  min-width:0!important;
+  text-align:left!important;
+}
+.wabi-month-symbols{
+  margin-left:auto!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:5px!important;
+  flex:0 0 auto!important;
+}
+.wabi-month-cat-hash{font-size:11px!important;font-weight:850!important;line-height:1!important}
+
+/* Preview mirrors the final right-hand half when dropping onto one card. */
+.wabi-drag-slot-preview.is-overlap-right{
+  left:calc(50% + 4px)!important;
+  right:auto!important;
+  width:calc(50% - 10px)!important;
+}
+
+/* Child text/icons never become a separate browser-native dragged object. */
+.wabi-task-card *{-webkit-user-drag:none!important}

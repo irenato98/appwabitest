@@ -1,0 +1,89 @@
+:root{--normal-fg:var(--brand-600);--normal-bg:var(--brand-50)}
+[data-theme="dark"]{--normal-fg:var(--brand-300);--normal-bg:rgba(91,108,163,.16)}
+
+/* Authoritative timeline geometry: wrapper and visible card both derive from
+   the same real minute range. There is no readable-minimum expansion anymore. */
+.wabi-day-event,.wabi-week-event{
+  min-height:0!important;
+  overflow:visible!important;
+  box-sizing:border-box!important;
+  left:var(--event-left,4px)!important;
+  width:var(--event-width,calc(100% - 8px))!important;
+  right:auto!important;
+}
+.wabi-day-event>.wabi-task-card,.wabi-week-event>.wabi-task-card{
+  position:absolute!important;
+  left:0!important;right:0!important;
+  top:var(--visual-shift,1px)!important;
+  width:100%!important;
+  height:var(--visual-height,1px)!important;
+  min-height:0!important;
+  max-height:none!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+  border-radius:8px!important;
+  transform:none!important;
+  box-shadow:0 1px 2px rgba(31,38,61,.055)!important;
+}
+.wabi-task-card:hover{transform:none!important;box-shadow:0 1px 3px rgba(31,38,61,.08)!important}
+
+/* Category is communicated by the card itself; no #category token is needed. */
+.wabi-task-card.has-category{
+  background:color-mix(in srgb,var(--card-category) 15%,var(--bg-elev-0))!important;
+  border-color:color-mix(in srgb,var(--card-category) 28%,var(--hairline))!important;
+}
+[data-theme="dark"] .wabi-task-card.has-category{
+  background:color-mix(in srgb,var(--card-category) 21%,var(--bg-elev-0))!important;
+  border-color:color-mix(in srgb,var(--card-category) 34%,var(--hairline))!important;
+}
+.wabi-task-card.has-category::before{
+  background:var(--card-category)!important;
+  left:3px!important;top:4px!important;bottom:4px!important;width:4px!important;
+  border-radius:999px!important;
+}
+.wabi-task-card:not(.has-category)::before{left:3px!important;top:4px!important;bottom:4px!important;width:3px!important;border-radius:999px!important}
+.wabi-card-symbol.category,.wabi-category-hash,.wabi-month-cat-hash{display:none!important}
+
+/* Very short = title only. Nothing else is allowed to collide with it. */
+.wabi-day-event.is-tiny>.wabi-task-card,
+.wabi-week-event.is-tiny>.wabi-task-card{
+  display:flex!important;align-items:center!important;justify-content:flex-start!important;
+  flex-direction:row!important;padding:2px 10px 2px 12px!important;
+}
+.wabi-day-event.is-tiny .wabi-card-main,
+.wabi-week-event.is-tiny .wabi-card-main{display:flex!important;width:100%!important;min-width:0!important;align-items:center!important}
+.wabi-day-event.is-tiny .wabi-card-check,
+.wabi-week-event.is-tiny .wabi-card-check,
+.wabi-day-event.is-tiny .wabi-time-chip,
+.wabi-week-event.is-tiny .wabi-time-chip,
+.wabi-day-event.is-tiny .wabi-card-inline-symbols,
+.wabi-week-event.is-tiny .wabi-card-inline-symbols,
+.wabi-day-event.is-tiny .wabi-card-symbol-row,
+.wabi-week-event.is-tiny .wabi-card-symbol-row,
+.wabi-day-event.is-tiny .wabi-week-symbol-row,
+.wabi-week-event.is-tiny .wabi-week-symbol-row,
+.wabi-day-event.is-tiny .wabi-card-compact-meta,
+.wabi-week-event.is-tiny .wabi-card-compact-meta{display:none!important}
+.wabi-day-event.is-tiny .wabi-card-title,
+.wabi-week-event.is-tiny .wabi-card-title{
+  display:block!important;flex:1 1 auto!important;min-width:0!important;
+  font-size:10.5px!important;line-height:1.05!important;font-weight:650!important;
+  overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+}
+
+/* Non-tiny cards keep the established content hierarchy. Category no longer
+   consumes a metadata slot because the surface already communicates it. */
+.wabi-day-event:not(.is-tiny)>.wabi-task-card,
+.wabi-week-event:not(.is-tiny)>.wabi-task-card{padding-left:12px!important;padding-right:9px!important}
+.wabi-card-symbol.energy.relax,.wabi-card-hover-tags [style*="--relax-fg"]{color:var(--relax-fg)!important}
+.wabi-card-symbol.energy.intense,.wabi-card-hover-tags [style*="--intense-fg"]{color:var(--intense-fg)!important}
+#wc-energy button[data-v="normal"].is-selected,#wce-energy button[data-v="normal"].is-selected{color:var(--normal-fg)!important;background:var(--normal-bg)!important}
+.wabi-mode-seg button[data-wabi-mode="normal"].is-active{color:var(--normal-fg)!important;background:var(--normal-bg)!important}
+.wabi-create-trigger.has-color{color:var(--choice-color)!important}
+
+/* Month mini-cards use the same category-color idea, with the same calm radius. */
+.wabi-month-event{border-radius:8px!important;box-shadow:none!important;color:var(--text)!important}
+
+/* Drag preview uses the same lane width as the actual final card. */
+.wabi-drag-slot-preview{left:4px!important;right:4px!important;width:auto!important}
+.wabi-drag-slot-preview.is-overlap-right{left:calc(50% + 2px)!important;right:auto!important;width:calc(50% - 6px)!important}

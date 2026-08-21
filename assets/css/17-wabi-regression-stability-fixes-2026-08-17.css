@@ -1,0 +1,99 @@
+/* Regression fix: exact clock coordinates remain independent. No card is
+   vertically pushed because another card exists nearby. */
+.wabi-day-event,.wabi-week-event{min-height:0!important;overflow:visible!important;}
+.wabi-day-event>.wabi-task-card,.wabi-week-event>.wabi-task-card{
+  top:var(--visual-shift,2px)!important;
+  height:var(--visual-height,38px)!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow:hidden!important;
+}
+
+/* Stable card breakpoints. No in-between state lets text and symbols collide. */
+.wabi-day-event>.wabi-task-card,.wabi-week-event>.wabi-task-card{padding:6px 10px!important;gap:0!important;}
+.wabi-day-event .wabi-card-meta,.wabi-week-event .wabi-card-meta{display:none!important;}
+.wabi-day-event .wabi-card-compact-meta,.wabi-week-event .wabi-card-compact-meta{display:none!important;}
+.wabi-day-event .wabi-week-symbol-row,.wabi-week-event .wabi-week-symbol-row{
+  display:flex!important;align-items:center!important;justify-content:flex-end!important;
+  gap:7px!important;margin:auto 1px 0 21px!important;padding:2px 1px 0!important;
+  min-width:0!important;max-width:calc(100% - 22px)!important;white-space:nowrap!important;overflow:hidden!important;
+  font-size:9px!important;line-height:1!important;
+}
+.wabi-day-event .wabi-week-symbol-row i,.wabi-week-event .wabi-week-symbol-row i{font-size:9px!important;}
+
+/* Tiny: one firm row. Día keeps duration/time; Semana intentionally does not. */
+.wabi-day-event.is-tiny>.wabi-task-card,.wabi-week-event.is-tiny>.wabi-task-card{
+  display:flex!important;flex-direction:row!important;align-items:center!important;padding:4px 9px!important;
+}
+.wabi-day-event.is-tiny .wabi-card-main,.wabi-week-event.is-tiny .wabi-card-main{
+  display:flex!important;align-items:center!important;gap:6px!important;flex:1 1 auto!important;min-width:0!important;width:100%!important;
+}
+.wabi-day-event.is-tiny .wabi-card-check,.wabi-week-event.is-tiny .wabi-card-check{display:none!important;}
+.wabi-day-event.is-tiny .wabi-card-title,.wabi-week-event.is-tiny .wabi-card-title{
+  flex:1 1 auto!important;min-width:24px!important;font-size:10px!important;line-height:1!important;
+}
+.wabi-day-event.is-tiny .wabi-time-chip{
+  display:inline-flex!important;flex:0 0 auto!important;margin-left:auto!important;height:auto!important;
+  padding:0!important;border:0!important;background:transparent!important;font-size:8.5px!important;line-height:1!important;
+}
+.wabi-day-event.is-tiny .wabi-time-chip i{display:none!important;}
+.wabi-week-event.is-tiny .wabi-time-chip{display:none!important;}
+.wabi-day-event.is-tiny .wabi-card-compact-meta,.wabi-week-event.is-tiny .wabi-card-compact-meta{
+  display:inline-flex!important;align-items:center!important;justify-content:flex-end!important;gap:6px!important;
+  flex:0 0 auto!important;margin-left:3px!important;font-size:8.5px!important;white-space:nowrap!important;
+}
+.wabi-day-event.is-tiny .wabi-week-symbol-row,.wabi-week-event.is-tiny .wabi-week-symbol-row{display:none!important;}
+
+/* Compact/roomy: first row = title + Day time, second row = symbols right. */
+.wabi-day-event:not(.is-tiny)>.wabi-task-card,.wabi-week-event:not(.is-tiny)>.wabi-task-card{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;
+}
+.wabi-day-event:not(.is-tiny) .wabi-card-main,.wabi-week-event:not(.is-tiny) .wabi-card-main{
+  display:flex!important;align-items:center!important;gap:6px!important;min-width:0!important;width:100%!important;
+}
+.wabi-day-event:not(.is-tiny) .wabi-card-title,.wabi-week-event:not(.is-tiny) .wabi-card-title{
+  flex:1 1 auto!important;min-width:24px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;
+}
+.wabi-day-event:not(.is-tiny) .wabi-time-chip{display:inline-flex!important;margin-left:auto!important;flex:0 0 auto!important;}
+.wabi-week-event .wabi-time-chip{display:none!important;}
+.wabi-day-event.is-tight>.wabi-task-card,.wabi-week-event.is-tight>.wabi-task-card{padding:5px 9px!important;}
+.wabi-day-event.is-tight .wabi-card-title,.wabi-week-event.is-tight .wabi-card-title{font-size:10.5px!important;line-height:1.05!important;}
+.wabi-day-event.is-tight .wabi-time-chip{font-size:8.5px!important;height:17px!important;padding:0 4px!important;}
+
+/* Month-day drawer uses exactly one metadata row: no duplicates. */
+.wabi-month-day-panel-list>.wabi-task-card{display:flex!important;flex-direction:column!important;overflow:hidden!important;}
+.wabi-month-day-panel-list .wabi-card-main{display:flex!important;align-items:center!important;gap:6px!important;min-width:0!important;}
+.wabi-month-day-panel-list .wabi-card-title{flex:1 1 auto!important;min-width:24px!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;}
+.wabi-month-day-panel-list .wabi-time-chip{display:inline-flex!important;margin-left:auto!important;flex:0 0 auto!important;}
+.wabi-month-day-panel-list .wabi-card-meta,.wabi-month-day-panel-list .wabi-card-compact-meta{display:none!important;}
+.wabi-month-day-panel-list .wabi-week-symbol-row{display:flex!important;justify-content:flex-end!important;gap:7px!important;margin:7px 1px 0 20px!important;}
+
+/* Editor is independent of the card position. It always fits the viewport. */
+.wabi-card-hover-popover.is-editor{
+  position:fixed!important;top:14px!important;right:20px!important;bottom:14px!important;left:auto!important;
+  width:min(610px,calc(100vw - 40px))!important;height:auto!important;max-height:none!important;
+  padding:0!important;margin:0!important;overflow:hidden!important;transform:none!important;
+}
+.wabi-card-hover-popover.is-editor .wabi-hover-activity-editor{
+  width:100%!important;height:100%!important;max-height:none!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;
+}
+.wabi-card-hover-popover.is-editor .wabi-create-body{overflow-y:auto!important;min-height:0!important;flex:1 1 auto!important;}
+.wabi-card-hover-popover.is-editor .wabi-create-head,.wabi-card-hover-popover.is-editor .wabi-create-foot{flex:0 0 auto!important;}
+
+/* New Activity keeps its existing anchored-popover design but uses the full
+   safe vertical space above the FAB instead of sitting too low. */
+.wabi-create-scrim{
+  align-items:stretch!important;justify-content:flex-end!important;padding:14px 20px 88px!important;
+}
+.wabi-create-scrim .wabi-create-v3{
+  width:min(610px,calc(100vw - 40px))!important;height:100%!important;max-height:none!important;
+  display:flex!important;flex-direction:column!important;overflow:hidden!important;
+}
+.wabi-create-scrim .wabi-create-body{overflow-y:auto!important;min-height:0!important;flex:1 1 auto!important;}
+.wabi-create-scrim .wabi-create-head,.wabi-create-scrim .wabi-create-foot{flex:0 0 auto!important;}
+
+/* Keep the stronger block separator visible above backgrounds/cards. */
+.wabi-day-block-band.is-block-boundary,.wabi-week-day-band.is-block-boundary{
+  border-top-width:2px!important;border-top-style:solid!important;
+  border-top-color:color-mix(in srgb,var(--text) 20%,transparent)!important;
+}

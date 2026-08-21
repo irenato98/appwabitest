@@ -1,0 +1,73 @@
+/* Semana: mismo lenguaje visual de Día, repetido en 7 columnas. */
+.wabi-week-time-gutter{
+  background:var(--bg-elev-0)!important;
+  overflow:visible!important;
+}
+.wabi-week-day{
+  position:relative!important;
+  overflow:hidden!important;
+  background:var(--bg-elev-0)!important;
+}
+.wabi-week-day-band.wabi-day-block{
+  position:absolute!important;
+  left:0!important;
+  right:0!important;
+  display:block!important;
+  min-height:0!important;
+  padding:0!important;
+  gap:0!important;
+  border-right:0!important;
+  border-bottom:1px solid var(--hairline-soft)!important;
+  border-radius:0!important;
+  pointer-events:auto!important;
+  z-index:1!important;
+}
+.wabi-week-day-band .band-label{
+  position:absolute!important;
+  left:8px!important;
+  top:6px!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  opacity:.55!important;
+  text-transform:none!important;
+  letter-spacing:0!important;
+  white-space:nowrap!important;
+  max-width:calc(100% - 16px)!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+.wabi-week-day-band .band-free{
+  position:absolute!important;
+  right:8px!important;
+  top:6px!important;
+  font-size:9px!important;
+  font-weight:650!important;
+  opacity:.68!important;
+  white-space:nowrap!important;
+}
+/* Las líneas y cards permanecen por encima del fondo, igual que en Día. */
+.wabi-week-time-line{z-index:3!important;}
+.wabi-week-event{z-index:9!important;left:6px!important;right:6px!important;}
+/* No reducir tipografía/metadatos solo por estar en Semana. */
+.wabi-week-event .wabi-card-title{font-size:12px!important;}
+.wabi-week-event .wabi-card-meta{font-size:9px!important;margin:3px 0 0 22px!important;gap:7px!important;}
+.wabi-week-event .wabi-time-chip,
+.wabi-week-event .wabi-energy-chip{font-size:9px!important;height:19px!important;padding:0 6px!important;gap:4px!important;}
+.wabi-week-event .wabi-energy-chip .energy-label,
+.wabi-week-event .wabi-priority .priority-label{display:inline!important;}
+
+/* Captura: sin marco punteado inicial. La ayuda no bloquea la parte superior. */
+.wabi-capture-app-frame{display:none!important;}
+.wabi-capture-help{
+  top:auto!important;
+  bottom:22px!important;
+  max-width:min(560px,calc(100vw - 40px))!important;
+  text-align:center!important;
+  align-items:center!important;
+  transition:opacity .12s ease,transform .12s ease!important;
+}
+.wabi-capture-help.is-hidden{
+  opacity:0!important;
+  transform:translateX(-50%) translateY(6px)!important;
+  visibility:hidden!important;
+}

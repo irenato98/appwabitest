@@ -1,0 +1,112 @@
+/* v15 stabilization: v11 behaviour preserved; only approved visual/asset fixes are consolidated here. */
+.toast{z-index:100000!important}
+/* Global mode selector remains visible. Relax/Intense are disabled; Normal is the only active state. */
+.wabi-header-center,.wabi-mode-seg{display:flex!important}.wabi-mode-seg [data-wabi-mode="relax"],.wabi-mode-seg [data-wabi-mode="intense"]{opacity:.28!important;filter:grayscale(.25);pointer-events:none!important;cursor:default!important}.wabi-mode-seg [data-wabi-mode="normal"]{opacity:1!important;pointer-events:none!important;font-weight:720!important}.wabi-header-right{justify-self:end!important}
+/* Energy metadata stays absent from activities themselves. */
+.chip-mini.is-relax,.chip-mini.is-intense,[data-action="set-type"]{display:none!important}.wabi-card-symbol.energy,.wabi-month-symbols .fa-leaf,.wabi-month-symbols .fa-bolt{display:none!important}.wabi-card-hover-tags span:has(.fa-leaf),.wabi-card-hover-tags span:has(.fa-bolt),.wabi-card-hover-tags span:has(.fa-equals),.wabi-focus-summary span:has(.fa-leaf),.wabi-focus-summary span:has(.fa-bolt),.wabi-focus-summary span:has(.fa-equals){display:none!important}
+/* Short cards show indicators only when runtime measurement leaves a comfortable gap. */
+.wabi-day-event.is-tiny .wabi-card-inline-symbols,.wabi-week-event.is-tiny .wabi-card-inline-symbols{display:none!important}.wabi-day-event.is-tiny .wabi-card-inline-symbols.wabi-meta-fits,.wabi-week-event.is-tiny .wabi-card-inline-symbols.wabi-meta-fits{display:inline-flex!important;gap:6px!important;flex:0 0 auto!important;margin-left:10px!important}.wabi-day-event.is-tiny .wabi-card-inline-symbols.wabi-meta-measuring,.wabi-week-event.is-tiny .wabi-card-inline-symbols.wabi-meta-measuring{display:inline-flex!important;position:absolute!important;visibility:hidden!important;pointer-events:none!important}.wabi-day-event.is-tiny .wabi-card-symbol-row,.wabi-week-event.is-tiny .wabi-card-symbol-row{display:none!important}.wabi-day-event.is-overlap .wabi-card-inline-symbols,.wabi-week-event.is-overlap .wabi-card-inline-symbols,.wabi-day-event.is-overlap .wabi-card-symbol-row,.wabi-week-event.is-overlap .wabi-card-symbol-row{display:none!important}
+/* Current-time guide. */
+.wabi-now-line{position:absolute;left:0;right:0;height:1px;background:rgba(255,59,62,.22);z-index:40;pointer-events:none}.wabi-now-line.is-today{height:2px;background:#ff3b3e;z-index:41}.wabi-now-line.is-today:before{content:'';position:absolute;left:-4px;top:50%;width:8px;height:8px;border-radius:50%;background:#ff3b3e;transform:translate(-50%,-50%)}.wabi-now-label{position:absolute;left:4px;transform:translateY(-50%);z-index:42;background:#ff3b3e;color:#fff;border-radius:999px;padding:2px 6px;font-size:9px;font-weight:750;font-variant-numeric:tabular-nums;pointer-events:none}.wabi-week-time-gutter .wabi-now-label{left:5px}
+/* Spotlight dims around the real source element. No cloned card is ever used. */
+.wabi-spot-piece{position:fixed;z-index:15500;background:transparent;box-shadow:0 0 0 9999px rgba(15,17,24,.20);opacity:0;pointer-events:none;transition:opacity .16s ease}.wabi-spot-piece.on{opacity:1}.wabi-spot-source{filter:saturate(1.035) brightness(1.015)}body.wabi-spot-scroll-lock{overscroll-behavior:none}body.wabi-spot-scroll-lock .wabi-day-scroll,body.wabi-spot-scroll-lock .wabi-week-timeline-scroll,body.wabi-spot-scroll-lock .wabi-month-grid{overflow:hidden!important}.wabi-card-hover-popover.is-editor{z-index:15530!important}.wabi-month-day-panel{z-index:15530!important}.wabi-editor-origin-animation{will-change:transform,opacity}
+.wabi-created-notification{position:fixed;top:18px;right:18px;width:min(330px,calc(100vw - 36px));z-index:100100;background:rgba(250,250,252,.94);color:#17181c;border:1px solid rgba(30,33,45,.10);border-radius:15px;padding:13px 36px 13px 14px;box-shadow:0 18px 48px rgba(20,24,34,.18);backdrop-filter:blur(22px) saturate(150%);cursor:pointer;animation:wabiNoticeIn .2s ease both}.wabi-created-notification strong{display:block;font-size:11px;margin-bottom:4px}.wabi-created-notification .title{font-size:12px;font-weight:720;margin-bottom:5px}.wabi-created-notification .meta{display:flex;gap:5px 9px;flex-wrap:wrap;font-size:9.5px;color:#666b76}.wabi-created-notification .close{position:absolute;right:9px;top:8px;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;color:#858994}.wabi-created-notification .close:hover{background:rgba(0,0,0,.06)}@keyframes wabiNoticeIn{from{opacity:0;transform:translateY(-8px) scale(.985)}to{opacity:1;transform:none}}
+/* Edit-only delete action: semantic button, visually plain red text on the left. */
+.wabi-edit-foot{align-items:center!important}.wabi-edit-foot-left{display:flex;align-items:center;gap:12px;min-width:0;flex:1}.wabi-edit-foot-actions{display:flex;gap:8px;flex:0 0 auto}.wabi-edit-delete-text{appearance:none;border:0!important;background:transparent!important;box-shadow:none!important;color:var(--danger-500)!important;font-size:11px;font-weight:650;padding:7px 0;white-space:nowrap}.wabi-edit-delete-text:hover{text-decoration:underline;text-underline-offset:2px}
+/* Drag auto-scroll affordance and copy state. */
+body.wabi-drag-copy .wabi-task-card.is-drag-source{opacity:.62}.wabi-drag-slot-preview:after{content:''}.wabi-drag-slot-preview.is-copy:after{content:'Copiar';position:absolute;right:6px;top:5px;font-size:8px;font-weight:750;padding:2px 5px;border-radius:999px;background:var(--bg-elev-0);border:1px solid var(--hairline)}
+/* Create and Edit share the exact same Notes/Subtasks visual treatment. */
+#wc-subtasks,#wce-subtasks{border:1px solid var(--hairline-soft);border-radius:11px;padding:2px 10px;background:rgba(255,255,255,.24)}[data-theme="dark"] #wc-subtasks,[data-theme="dark"] #wce-subtasks{background:rgba(255,255,255,.025)}#wc-notes,#wce-notes{width:100%;min-height:92px;resize:vertical;padding:9px 10px;border:1px solid var(--hairline);border-radius:10px;background:rgba(255,255,255,.55);color:var(--text);font:inherit;font-size:11.5px;line-height:1.45;outline:none}#wc-notes:focus,#wce-notes:focus{border-color:rgba(91,108,163,.48);box-shadow:0 0 0 3px rgba(91,108,163,.09)}
+/* Focus: completion action is visible above the title; normal desktop content fits without page scrolling. */
+.wabi-focus-top-action{display:flex;justify-content:center;margin:0 0 12px}.wabi-focus-top-action .wabi-focus-done{height:34px}.wabi-focus-bottom{display:none!important}@media(min-width:761px){.wabi-focus-overlay{overflow:hidden!important}.wabi-focus-shell{height:100vh;min-height:0!important}.wabi-focus-head{position:relative!important;flex:0 0 56px;height:56px!important}.wabi-focus-main{height:calc(100vh - 56px);min-height:0;overflow:hidden;width:min(900px,calc(100vw - 48px))!important;padding:22px 0 22px!important;gap:14px!important}.wabi-focus-intro{flex:0 0 auto}.wabi-focus-kicker{margin-bottom:6px!important}.wabi-focus-intro h1{font-size:27px!important;margin-bottom:9px!important}.wabi-focus-timer-card{padding:18px 24px!important;flex:0 0 auto}.wabi-focus-grid{min-height:0;flex:1 1 auto;align-items:stretch!important}.wabi-focus-section{min-height:0;display:flex;flex-direction:column;padding:16px!important}.wabi-focus-subtasks{min-height:0;overflow:auto}.wabi-focus-notes{min-height:0!important;height:100%!important;resize:none!important}.wabi-focus-section:has(.wabi-focus-notes){min-height:0}.wabi-focus-section:has(.wabi-focus-notes) .wabi-focus-notes{flex:1 1 auto}}
+.wabi-ai-panel{animation:none!important}
+[data-wabi-legal],.wabi-legal-link{text-decoration:underline!important;text-underline-offset:2px!important;cursor:pointer!important}
+@media(prefers-reduced-motion:reduce){.wabi-spot-piece,.wabi-created-notification{transition:none!important;animation:none!important}}
+/* Brand: Open Sans Bold. Entire [wabi]/[w] is brand blue; TM stays light Inter. */
+.brand-wordmark,.wabi-mini-mark,.wabi-ai-mark,.wabi-ai-welcome-mark{font-family:var(--font-brand)!important;font-weight:700!important;letter-spacing:-.035em!important;color:var(--brand-500)!important}
+.brand-wordmark .brand-bracket{color:inherit!important;font-weight:inherit!important}
+.brand-wordmark::after{content:"™";font-family:var(--font-sans)!important;font-size:.31em;font-weight:550;letter-spacing:0;display:inline-block;position:relative;top:-1.35em;margin-left:2px;color:var(--text-muted)}
+.brand-tagline,.wabi-entry-by-v2{display:none!important}
+
+/* Light keeps the original [wabi] colours. Only large whites are softened. */
+:root{--wabi-control-border:rgba(28,30,36,.12);--wabi-shadow-control:0 1px 2px rgba(28,30,36,.055),0 3px 8px rgba(28,30,36,.045);--wabi-shadow-hover:0 3px 8px rgba(28,30,36,.075),0 12px 28px rgba(28,30,36,.10);--wabi-shadow-float:0 2px 6px rgba(28,30,36,.075),0 20px 48px rgba(28,30,36,.16)}
+[data-theme="dark"]{--wabi-control-border:rgba(255,255,255,.12);--wabi-shadow-control:0 1px 2px rgba(0,0,0,.22),0 4px 10px rgba(0,0,0,.18);--wabi-shadow-hover:0 4px 10px rgba(0,0,0,.26),0 14px 32px rgba(0,0,0,.32);--wabi-shadow-float:0 3px 8px rgba(0,0,0,.30),0 22px 54px rgba(0,0,0,.46)}
+
+/* Header controls need a readable surface against the calendar background. Geometry is unchanged. */
+.wabi-header-nav,.wabi-mode-seg{background:var(--bg-elev-1)!important;border-color:var(--wabi-control-border)!important;box-shadow:var(--wabi-shadow-control)!important}
+.wabi-header-nav .wabi-today,.wabi-mode-seg [data-wabi-mode="normal"],.wabi-filter-button{background:var(--bg-elev-0)!important;border:1px solid var(--wabi-control-border)!important;box-shadow:var(--wabi-shadow-control)!important;color:var(--text)!important}
+.wabi-header-nav button:hover,.wabi-filter-button:hover,.wabi-filter-button.is-open{background:color-mix(in srgb,var(--bg-elev-0) 82%,var(--brand-50) 18%)!important;box-shadow:var(--wabi-shadow-hover)!important;color:var(--text)!important}
+.wabi-filter-menu{background:var(--bg-elev-0)!important;border-color:var(--wabi-control-border)!important;box-shadow:var(--wabi-shadow-float)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.wabi-header-icon{border:1px solid transparent!important;transition:background var(--t-fast),border-color var(--t-fast),box-shadow var(--t-fast),color var(--t-fast)!important}
+.wabi-header-icon:hover{background:var(--bg-elev-0)!important;border-color:var(--wabi-control-border)!important;box-shadow:var(--wabi-shadow-control)!important;color:var(--text)!important}
+.wabi-header-avatar:hover{box-shadow:0 2px 5px rgba(91,108,163,.20),0 8px 20px rgba(91,108,163,.26)!important}
+
+/* Hover inspector: a little more elevation, but no calendar dimming. */
+.wabi-card-hover-popover:not(.is-editor){background:var(--bg-elev-0)!important;border-color:var(--wabi-control-border)!important;box-shadow:0 3px 10px rgba(28,30,36,.10),0 22px 52px rgba(28,30,36,.18)!important}
+[data-theme="dark"] .wabi-card-hover-popover:not(.is-editor){box-shadow:0 5px 12px rgba(0,0,0,.32),0 24px 56px rgba(0,0,0,.46)!important}
+
+/* Create/Edit: background remains recognisable but no longer competes with the sheet. */
+.wabi-create-scrim{background:rgba(18,19,25,.28)!important;-webkit-backdrop-filter:blur(4px) saturate(96%)!important;backdrop-filter:blur(4px) saturate(96%)!important}
+[data-theme="dark"] .wabi-create-scrim{background:rgba(3,5,8,.46)!important}
+.wabi-create-scrim .wabi-create-v3,.wabi-card-hover-popover.is-editor{background:var(--bg-elev-0)!important;border-color:var(--wabi-control-border)!important;box-shadow:var(--wabi-shadow-float)!important}
+
+/* IA and +: slightly more lift on hover. The + is always visible over brand blue. */
+.wabi-fab-action{transition:transform var(--t-fast),box-shadow var(--t-fast),filter var(--t-fast)!important}
+.wabi-fab-action:hover{transform:translateY(-2px)!important;box-shadow:0 5px 12px rgba(28,30,36,.11),0 18px 38px rgba(28,30,36,.16)!important}
+.wabi-fab-action.add{color:#fff!important;box-shadow:0 5px 14px rgba(91,108,163,.24),0 15px 34px rgba(91,108,163,.24)!important}
+.wabi-fab-action.add:hover{box-shadow:0 7px 18px rgba(91,108,163,.30),0 22px 44px rgba(91,108,163,.30)!important}
+.wabi-fab-action.add .fa-plus{display:inline-block!important;color:#fff!important;background-color:#fff!important;opacity:1!important;width:1em!important;height:1em!important}
+[data-theme="dark"] .wabi-fab-action:hover{box-shadow:0 6px 14px rgba(0,0,0,.30),0 20px 44px rgba(0,0,0,.40)!important}
+
+/* Settings: subtle surface/border separation; no new grayscale redesign. */
+.wabi-settings-row,.wabi-integration,.wabi-block-setting,.wabi-day-start-row,.wabi-block-readonly-list{background:var(--bg-elev-0)!important;border-color:var(--wabi-control-border)!important}
+.wabi-language-seg{background:var(--bg-elev-1)!important;border-color:var(--wabi-control-border)!important}
+.wabi-language-seg button.is-selected{background:var(--bg-elev-0)!important;box-shadow:var(--wabi-shadow-control)!important}
+.wabi-reminder-chip{background:var(--bg-elev-1)!important;border-color:var(--wabi-control-border)!important}
+.wabi-reminder-chip.on{background:rgba(91,108,163,.12)!important;border-color:rgba(91,108,163,.35)!important}
+
+/* Blocks reset is a red text action, not a button-shaped control. */
+#wabi-reset-blocks{height:auto!important;padding:7px 0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:var(--danger-500)!important;font-weight:650!important}
+#wabi-reset-blocks:hover{background:transparent!important;color:var(--danger-600)!important;text-decoration:underline;text-underline-offset:2px}
+#wabi-reset-blocks .fa-arrow-rotate-left{display:none!important}
+
+/* Focus belongs to the app canvas; it is not a white standalone page. */
+.wabi-focus-overlay{background:var(--bg)!important}
+.wabi-focus-head{background:var(--bg-elev-1)!important;border-bottom-color:var(--hairline)!important}
+.wabi-focus-timer-card,.wabi-focus-section{background:var(--bg-elev-0)!important;border-color:var(--wabi-control-border)!important}
+
+/* AI surface: its pointer/tail follows the IA button anchor, never the +. */
+.wabi-ai-scrim{background:rgba(23,25,31,.18)!important;-webkit-backdrop-filter:blur(4px) saturate(96%)!important;backdrop-filter:blur(4px) saturate(96%)!important}
+[data-theme="dark"] .wabi-ai-scrim{background:rgba(4,6,9,.34)!important}
+.wabi-ai-panel{background:var(--bg-elev-0)!important;border-color:var(--wabi-control-border)!important;box-shadow:var(--wabi-shadow-float)!important}
+.wabi-ai-scrim::after{right:auto!important;left:calc(var(--wabi-ai-anchor-x,calc(100% - 90px)) - 8px)!important;background:var(--bg-elev-0)!important}
+
+
+/* Fixed-time editor: the 24 h number is the source of truth; AM/PM is a converter. */
+.wabi-clock-meridiem button.is-selected{background:var(--brand-500)!important;color:#fff!important;border-color:var(--brand-500)!important;box-shadow:0 2px 7px rgba(91,108,163,.26)!important}
+[data-theme="dark"] .wabi-clock-meridiem button.is-selected{background:var(--brand-400)!important;color:#fff!important;border-color:transparent!important}
+
+/* Brand is one system in Header, Focus, IA and onboarding. */
+.wabi-focus-brand{font-family:var(--font-brand)!important;font-size:17px!important;font-weight:700!important;letter-spacing:-.035em!important;color:var(--brand-500)!important}
+.wabi-focus-brand .brand-bracket{color:inherit!important;font-weight:inherit!important}
+.wabi-focus-brand::after{content:"™";font-family:var(--font-sans)!important;font-size:.31em;font-weight:550;letter-spacing:0;display:inline-block;position:relative;top:-1.35em;margin-left:2px;color:var(--text-muted)}
+
+/* Dark: IA and + belong to the same primary action family. */
+[data-theme="dark"] .wabi-fab-action.ai{background:var(--brand-500)!important;color:#fff!important;border-color:rgba(255,255,255,.18)!important;box-shadow:0 5px 14px rgba(91,108,163,.25),0 15px 34px rgba(0,0,0,.30)!important}
+[data-theme="dark"] .wabi-fab-action.ai:hover{background:var(--brand-600)!important;box-shadow:0 7px 18px rgba(91,108,163,.28),0 22px 44px rgba(0,0,0,.38)!important}
+[data-theme="dark"] .wabi-fab-action.ai .wabi-mini-mark{color:#fff!important}
+
+/* Reminder delivery is global, so it remains readable above Settings/Edit/Focus. */
+@keyframes wabiNoticeIn{from{opacity:0;transform:translateY(-8px) scale(.985)}to{opacity:1;transform:none}}
+.wabi-reminder-notification{position:fixed;top:18px;right:18px;width:min(360px,calc(100vw - 36px));z-index:120000;background:rgba(252,252,253,.97);color:#17181c;border:1px solid rgba(30,33,45,.12);border-radius:16px;padding:14px 38px 14px 15px;box-shadow:0 20px 54px rgba(20,24,34,.20);backdrop-filter:blur(20px) saturate(145%);cursor:pointer;animation:wabiNoticeIn .2s ease both}
+.wabi-reminder-notification .eyebrow{font-size:9px;letter-spacing:.07em;text-transform:uppercase;font-weight:760;color:#737987;margin-bottom:4px}.wabi-reminder-notification strong{display:block;font-size:13px;line-height:1.35;margin-bottom:5px}.wabi-reminder-notification .meta{font-size:10.5px;color:#696e78;line-height:1.4}.wabi-reminder-notification .close{position:absolute;right:9px;top:8px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#858994}.wabi-reminder-notification .close:hover{background:rgba(0,0,0,.06)}
+[data-theme="dark"] .wabi-reminder-notification{background:rgba(40,41,47,.97);color:#f3f3f6;border-color:rgba(255,255,255,.12);box-shadow:0 22px 58px rgba(0,0,0,.52)}[data-theme="dark"] .wabi-reminder-notification .eyebrow,[data-theme="dark"] .wabi-reminder-notification .meta{color:#b0b2ba}[data-theme="dark"] .wabi-reminder-notification .close:hover{background:rgba(255,255,255,.07)}
+
+/* Permission prompt appears only after the user chooses a reminder or explicitly opens Settings. */
+.wabi-notify-permission{position:fixed;inset:0;z-index:120100;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(18,19,25,.28);backdrop-filter:blur(5px)}
+.wabi-notify-permission-card{width:min(430px,calc(100vw - 40px));padding:23px;background:var(--bg-elev-0);border:1px solid var(--wabi-control-border);border-radius:18px;box-shadow:var(--wabi-shadow-float);color:var(--text)}
+.wabi-notify-permission-icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;margin-bottom:13px;background:rgba(91,108,163,.12);color:var(--brand-600);font-size:17px}.wabi-notify-permission-card h2{font-size:17px;margin:0 0 7px}.wabi-notify-permission-card p{font-size:11.5px;line-height:1.5;color:var(--text-muted);margin:0}.wabi-notify-permission-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:19px}
+.wabi-settings-help{font-size:10.5px;color:var(--text-muted);line-height:1.5}.wabi-sound-controls{display:flex;align-items:center;gap:7px}.wabi-sound-controls .wabi-select{min-width:105px}
+
+/* Copy drag is visually explicit on macOS Option and Windows/Linux Alt. */
+body.wabi-drag-copy .wabi-drag-slot-preview:after{content:'Duplicar';position:absolute;right:6px;top:5px;font-size:8px;font-weight:750;padding:2px 6px;border-radius:999px;background:var(--brand-500);color:#fff;border:0}

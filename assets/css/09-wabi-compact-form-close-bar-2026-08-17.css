@@ -1,0 +1,24 @@
+/* ÚNICO cambio de esta versión:
+   barra superior compacta y visualmente pasiva en Nueva Actividad y Editar. */
+.wabi-create-v3 .wabi-create-head,
+.wabi-card-hover-popover.is-editor .wabi-create-head{
+  min-height:44px!important;
+  height:44px!important;
+  padding:7px 12px!important;
+  box-sizing:border-box!important;
+  justify-content:flex-end!important;
+  background:var(--bg-elev-1)!important;
+  border-bottom:1px solid var(--hairline-soft)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+[data-theme="dark"] .wabi-create-v3 .wabi-create-head,
+[data-theme="dark"] .wabi-card-hover-popover.is-editor .wabi-create-head{
+  background:color-mix(in srgb,var(--bg-elev-1) 92%,white 8%)!important;
+}
+.wabi-create-v3 .wabi-create-head .wabi-close,
+.wabi-card-hover-popover.is-editor .wabi-create-head .wabi-close{
+  width:30px!important;
+  height:30px!important;
+  flex:0 0 30px!important;
+}

@@ -1,0 +1,71 @@
+/* Día/Semana: las bandas reciben el drop; los cards siguen por encima. */
+.wabi-day-view .wabi-day-block-band.wabi-day-block{pointer-events:auto!important}
+
+/* Hora fija: visible/clicable, pero no arrastrable. */
+.wabi-task-card.is-fixed{cursor:default!important}
+.wabi-task-card.is-fixed:active{cursor:default!important}
+
+/* FABs: círculo perfecto y símbolo ópticamente centrado. */
+.wabi-fab-action{
+  position:relative!important;
+  width:48px!important;
+  min-width:48px!important;
+  height:48px!important;
+  flex:0 0 48px!important;
+  padding:0!important;
+  gap:0!important;
+  border-radius:50%!important;
+  overflow:visible!important;
+  display:grid!important;
+  place-items:center!important;
+  line-height:1!important;
+}
+.wabi-fab-action.ai .wabi-mini-mark,
+.wabi-fab-action.add i{
+  display:grid!important;
+  place-items:center!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  line-height:1!important;
+}
+.wabi-fab-action .fab-label{
+  position:absolute!important;
+  right:0!important;
+  bottom:calc(100% + 8px)!important;
+  max-width:none!important;
+  width:max-content!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  padding:7px 10px!important;
+  border-radius:9px!important;
+  background:var(--glass-strong)!important;
+  color:var(--text)!important;
+  border:1px solid var(--glass-stroke)!important;
+  box-shadow:var(--sh-2)!important;
+  backdrop-filter:blur(18px) saturate(150%)!important;
+  transform:translateY(3px)!important;
+  transition:opacity .14s ease,transform .16s var(--spring)!important;
+}
+.wabi-fab-action:hover{transform:scale(1.045)!important}
+.wabi-fab-action:hover .fab-label{opacity:1!important;transform:translateY(0)!important}
+
+/* Modal final de agradecimiento. */
+.wabi-feedback-thanks{
+  width:min(430px,90vw);
+  padding:28px 28px 24px;
+  text-align:center;
+  background:var(--glass-strong);
+  border:1px solid var(--glass-stroke);
+  border-radius:22px;
+  box-shadow:var(--sh-pop);
+  backdrop-filter:blur(30px) saturate(170%);
+}
+.wabi-feedback-thanks-icon{
+  width:42px;height:42px;margin:0 auto 13px;border-radius:50%;
+  display:grid;place-items:center;background:var(--bg-selected);color:var(--brand-600);
+  font-size:16px;
+}
+.wabi-feedback-thanks h2{font-size:17px;letter-spacing:-.02em;margin:0 0 8px}
+.wabi-feedback-thanks p{font-size:12px;line-height:1.5;color:var(--text-muted);margin:0 auto 20px;max-width:330px}
+.wabi-feedback-thanks .wabi-btn{min-width:110px}

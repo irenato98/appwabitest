@@ -1,0 +1,34 @@
+/* AI-only visual refinement. No scheduler/card/form behavior is changed here. */
+.wabi-ai-panel{
+  width:min(500px,calc(100vw - 40px))!important;
+  height:min(660px,calc(100vh - 112px))!important;
+  border-radius:22px!important;
+  background:var(--bg-elev-0)!important;
+  box-shadow:0 18px 55px rgba(20,24,35,.18),0 0 0 1px rgba(0,0,0,.035)!important;
+}
+.wabi-ai-scrim::after{background:var(--bg-elev-0)!important}
+.wabi-ai-head{height:48px!important;flex-basis:48px!important;padding:0 13px 0 16px!important;background:var(--bg-elev-0)!important;border-bottom:1px solid var(--hairline-soft)!important;font-size:11.5px!important}
+.wabi-ai-head>div{gap:8px!important}.wabi-ai-mark{font-size:15px!important}.wabi-ai-head button{border-radius:50%!important}
+.wabi-ai-body{padding:26px 22px 18px!important;gap:18px!important}
+.wabi-ai-messages{gap:18px!important;padding:0 4px!important;scroll-padding-bottom:18px}
+.wabi-ai-welcome{margin:auto;max-width:330px;min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px;color:var(--text)}
+.wabi-ai-welcome-mark{width:38px;height:38px;border:1px solid var(--hairline);border-radius:12px;display:grid;place-items:center;font-family:var(--font-serif);font-size:16px;color:var(--brand-600);background:var(--bg-elev-1);box-shadow:var(--sh-1)}
+.wabi-ai-welcome strong{font-size:20px;line-height:1.2;letter-spacing:-.025em;font-weight:650}
+.wabi-ai-welcome>span:last-child{font-size:11.5px;line-height:1.5;color:var(--text-muted)}
+.wabi-ai-message{max-width:86%!important;padding:0!important;border-radius:0!important;font-size:12px!important;line-height:1.55!important}
+.wabi-ai-message.assistant{align-self:stretch!important;max-width:100%!important;background:transparent!important;color:var(--text)!important;padding-right:22px!important}
+.wabi-ai-message.user{align-self:flex-end!important;padding:9px 13px!important;border-radius:18px!important;background:var(--bg-elev-1)!important;color:var(--text)!important;border:1px solid var(--hairline-soft)!important}
+.wabi-ai-message.is-thinking{align-self:flex-start!important;width:auto!important;min-width:0!important;color:var(--text-faint)!important;font-size:16px!important}
+.wabi-ai-suggestions{display:grid!important;grid-template-columns:1fr 1fr!important;gap:9px!important;transition:opacity .14s ease,transform .14s ease}
+.wabi-ai-suggestions.is-used{display:none!important}
+.wabi-ai-suggestions button{height:auto!important;min-height:72px!important;padding:11px 12px!important;border-radius:14px!important;background:var(--bg-elev-0)!important;border:1px solid var(--hairline)!important;display:grid!important;grid-template-columns:28px 1fr!important;align-items:start!important;text-align:left!important;gap:9px!important;color:var(--text)!important;font-weight:500!important}
+.wabi-ai-suggestions button:hover{background:var(--bg-elev-1)!important;border-color:var(--hairline-strong)!important;transform:translateY(-1px)}
+.wabi-ai-suggestion-icon{width:28px;height:28px;border-radius:9px;background:var(--bg-elev-1);display:grid;place-items:center;color:var(--brand-600);font-size:10px}
+.wabi-ai-suggestions button>span:last-child{display:flex;flex-direction:column;gap:3px;min-width:0}
+.wabi-ai-suggestions strong{font-size:11px;font-weight:700;line-height:1.25}.wabi-ai-suggestions small{font-size:9.8px;font-weight:500;line-height:1.35;color:var(--text-muted)}
+.wabi-ai-compose{margin:0 18px 18px!important;padding:8px 8px 8px 14px!important;border-radius:22px!important;min-height:50px!important;background:var(--bg-elev-1)!important;border:1px solid var(--hairline)!important;box-shadow:0 1px 3px rgba(0,0,0,.035)!important}
+.wabi-ai-compose:focus-within{border-color:color-mix(in srgb,var(--brand-500) 38%,var(--hairline))!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--brand-500) 8%,transparent)!important}
+.wabi-ai-compose textarea{font-size:12px!important;line-height:1.45!important;padding:7px 0!important}.wabi-ai-compose textarea::placeholder{color:var(--text-faint)}
+.wabi-ai-compose button{width:32px!important;height:32px!important;border-radius:50%!important;background:var(--text)!important;color:var(--bg-elev-0)!important;font-size:10px!important}
+[data-theme="dark"] .wabi-ai-panel{box-shadow:0 20px 60px rgba(0,0,0,.48),0 0 0 1px rgba(255,255,255,.03)!important}
+@media(max-width:720px){.wabi-ai-suggestions{grid-template-columns:1fr!important}}

@@ -1,0 +1,97 @@
+/* Nueva actividad · layout v3. Scoped so the rest of the app stays unchanged. */
+.wabi-create-v3{width:min(610px,94vw)}
+.wabi-create-v3 .wabi-title-input{margin-bottom:10px}
+.wabi-create-v3 .wabi-field{margin:11px 0}
+.wabi-create-v3 .wabi-plan-content{margin-top:8px}
+.wabi-create-v3 .wabi-two-col{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(150px,.75fr);gap:10px 12px;align-items:start}
+.wabi-create-v3 .wabi-choice-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:6px}
+.wabi-create-v3 .wabi-choice-btn{min-height:38px;padding:0 10px;border:1px solid var(--hairline);border-radius:10px;background:rgba(255,255,255,.28);color:var(--text-muted);font-size:11px;font-weight:650;display:flex;align-items:center;justify-content:center;gap:6px;transition:background var(--t-fast),border-color var(--t-fast),color var(--t-fast),box-shadow var(--t-fast),transform var(--t-instant)}
+[data-theme="dark"] .wabi-create-v3 .wabi-choice-btn{background:rgba(255,255,255,.035)}
+.wabi-create-v3 .wabi-choice-btn:hover{transform:translateY(-1px)}
+.wabi-create-v3 .wabi-block-choice{--choice-bg:var(--bg-selected);--choice-fg:var(--brand-600);--choice-border:var(--brand-300)}
+.wabi-create-v3 .wabi-block-choice:hover,.wabi-create-v3 .wabi-block-choice.is-selected{background:var(--choice-bg);color:var(--choice-fg);border-color:var(--choice-border);box-shadow:0 2px 8px color-mix(in srgb,var(--choice-fg) 12%,transparent)}
+.wabi-create-v3 .wabi-block-choice .block-key{font-size:9px;font-weight:800;opacity:.75}
+.wabi-create-v3 .wabi-priority-choice{--choice-color:var(--text-muted)}
+.wabi-create-v3 .wabi-priority-choice i{color:var(--choice-color)}
+.wabi-create-v3 .wabi-priority-choice:hover,.wabi-create-v3 .wabi-priority-choice.is-selected{background:color-mix(in srgb,var(--choice-color) 11%,transparent);border-color:color-mix(in srgb,var(--choice-color) 45%,var(--hairline));color:var(--choice-color);box-shadow:0 2px 8px color-mix(in srgb,var(--choice-color) 11%,transparent)}
+.wabi-create-v3 #wc-energy button{transition:background var(--t-fast),color var(--t-fast),box-shadow var(--t-fast),transform var(--t-instant)}
+.wabi-create-v3 #wc-energy button:hover{transform:translateY(-1px)}
+.wabi-create-v3 #wc-energy button[data-v="relax"]:hover,.wabi-create-v3 #wc-energy button[data-v="relax"].is-selected{background:var(--relax-bg);color:var(--relax-fg);box-shadow:0 2px 8px color-mix(in srgb,var(--relax-fg) 14%,transparent)}
+.wabi-create-v3 #wc-energy button[data-v="intense"]:hover,.wabi-create-v3 #wc-energy button[data-v="intense"].is-selected{background:var(--intense-bg);color:var(--intense-fg);box-shadow:0 2px 8px color-mix(in srgb,var(--intense-fg) 14%,transparent)}
+.wabi-create-v3 #wc-energy button[data-v="normal"]:hover,.wabi-create-v3 #wc-energy button[data-v="normal"].is-selected{background:var(--glass-strong);color:var(--text);box-shadow:0 1px 5px rgba(0,0,0,.1)}
+.wabi-create-v3 .wabi-create-dropdown{position:relative}
+.wabi-create-v3 .wabi-create-trigger{width:100%;height:42px;border:1px solid var(--hairline);border-radius:11px;background:rgba(255,255,255,.55);padding:0 11px;color:var(--text);display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11.5px;text-align:left;transition:background var(--t-fast),border-color var(--t-fast),color var(--t-fast),box-shadow var(--t-fast)}
+[data-theme="dark"] .wabi-create-v3 .wabi-create-trigger{background:rgba(255,255,255,.055)}
+.wabi-create-v3 .wabi-create-trigger .trigger-main{display:flex;align-items:center;gap:7px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wabi-create-v3 .wabi-create-trigger.has-color{--choice-color:var(--brand-500);color:var(--choice-color);border-color:color-mix(in srgb,var(--choice-color) 38%,var(--hairline));background:color-mix(in srgb,var(--choice-color) 9%,var(--bg-elev-0))}
+.wabi-create-v3 .wabi-create-trigger.has-color:hover{background:color-mix(in srgb,var(--choice-color) 14%,var(--bg-elev-0));border-color:color-mix(in srgb,var(--choice-color) 55%,var(--hairline))}
+.wabi-create-v3 .wabi-create-menu{display:none;position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:40;padding:5px;border:1px solid var(--hairline);border-radius:12px;background:var(--glass-strong);box-shadow:var(--sh-pop);backdrop-filter:blur(22px) saturate(160%);max-height:240px;overflow:auto}
+.wabi-create-v3 .wabi-create-menu.is-open{display:block;animation:popoverIn var(--t-fast) both}
+.wabi-create-v3 .wabi-create-menu-item{width:100%;min-height:34px;padding:6px 9px;border-radius:8px;display:flex;align-items:center;gap:8px;color:var(--text);font-size:11.5px;text-align:left;transition:background var(--t-fast),color var(--t-fast)}
+.wabi-create-v3 .wabi-create-menu-item .menu-check{margin-left:auto;opacity:0;color:currentColor}
+.wabi-create-v3 .wabi-create-menu-item.is-selected .menu-check{opacity:1}
+.wabi-create-v3 .wabi-category-option{--choice-color:var(--text-muted)}
+.wabi-create-v3 .wabi-category-option:hover,.wabi-create-v3 .wabi-category-option.is-selected{background:color-mix(in srgb,var(--choice-color) 11%,transparent);color:var(--choice-color)}
+.wabi-create-v3 .wabi-category-dot{width:8px;height:8px;border-radius:50%;background:var(--choice-color);flex:0 0 auto}
+.wabi-create-v3 .wabi-reminder-option:hover,.wabi-create-v3 .wabi-reminder-option.is-selected,.wabi-create-v3 .wabi-repeat-option:hover,.wabi-create-v3 .wabi-repeat-option.is-selected{background:var(--bg-selected);color:var(--brand-700)}
+[data-theme="dark"] .wabi-create-v3 .wabi-reminder-option:hover,[data-theme="dark"] .wabi-create-v3 .wabi-reminder-option.is-selected,[data-theme="dark"] .wabi-create-v3 .wabi-repeat-option:hover,[data-theme="dark"] .wabi-create-v3 .wabi-repeat-option.is-selected{color:var(--brand-300)}
+.wabi-create-v3 .wabi-auto-block{--choice-bg:var(--bg-selected);--choice-fg:var(--brand-600);--choice-border:var(--brand-300);display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:5px 9px;border:1px solid var(--choice-border);border-radius:999px;background:var(--choice-bg);color:var(--choice-fg);font-size:10.5px;font-weight:700}
+.wabi-create-v3 .wabi-custom-repeat{display:none;grid-template-columns:1fr 1.4fr;gap:8px;margin-top:8px}
+.wabi-create-v3 .wabi-custom-repeat.is-visible{display:grid}
+.wabi-create-v3 .wabi-fixed-range-grid{margin-top:0}
+.wabi-create-v3 .wabi-plan-toggle button i{margin-right:5px}
+.wabi-create-v3 .wabi-estimated-readout{font-size:11px}
+.wabi-create-v3 .wabi-create-head{justify-content:flex-end}
+.wabi-create-v3 .wabi-time-text{font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.wabi-create-v3 .wabi-reminder-menu-divider{height:1px;background:var(--hairline-soft);margin:5px 7px}
+.wabi-create-v3 .wabi-reminder-custom{display:none;padding:7px;margin-top:3px;border-top:1px solid var(--hairline-soft);grid-template-columns:minmax(72px,.7fr) minmax(120px,1.3fr) auto;gap:6px;align-items:center}
+.wabi-create-v3 .wabi-reminder-custom.is-visible{display:grid}
+.wabi-create-v3 .wabi-reminder-custom .wabi-input,.wabi-create-v3 .wabi-reminder-custom .wabi-select{height:34px;font-size:11px}
+.wabi-create-v3 .wabi-reminder-custom .wabi-btn{height:34px;padding:0 10px}
+
+/* Free-form fixed time: hour + minute typed by the user, AM/PM chosen explicitly. */
+.wabi-clock-editor{display:flex;align-items:center;gap:5px;min-height:42px;padding:4px 5px 4px 8px;border:1px solid var(--hairline);border-radius:11px;background:rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.45);font-variant-numeric:tabular-nums}
+[data-theme="dark"] .wabi-clock-editor{background:rgba(255,255,255,.055)}
+.wabi-clock-editor:focus-within{border-color:rgba(91,108,163,.52);box-shadow:0 0 0 3px rgba(91,108,163,.10),inset 0 1px 0 rgba(255,255,255,.45)}
+.wabi-clock-number{width:35px;height:31px;border:0!important;border-radius:7px!important;background:transparent!important;padding:0 3px!important;text-align:center;font-size:15px!important;font-weight:650!important;color:var(--text)!important;outline:0!important;box-shadow:none!important}
+.wabi-clock-number.minute{width:39px}
+.wabi-clock-number::placeholder{color:var(--text-faint);font-weight:500}
+.wabi-clock-colon{font-size:16px;font-weight:700;color:var(--text-muted);margin:0 -1px}
+.wabi-clock-meridiem{display:flex;gap:2px;margin-left:auto;padding:2px;border-radius:9px;background:var(--bg-elev-1);border:1px solid var(--hairline-soft)}
+.wabi-clock-meridiem button{height:27px;padding:0 7px;border-radius:7px;font-size:10px;font-weight:650;color:var(--text-muted);white-space:nowrap}
+.wabi-clock-meridiem button:hover{background:var(--bg-hover);color:var(--text)}
+.wabi-clock-meridiem button.is-selected{background:var(--bg-elev-0);color:var(--brand-600);box-shadow:var(--sh-1)}
+.wabi-fixed-range-grid .wabi-field{min-width:0}
+
+/* Week = seven-column time line. Block bands remain elastic, while fixed activities can cross bands. */
+.wabi-week-timeline-shell{height:100%;display:flex;flex-direction:column;min-height:0;background:var(--bg-elev-0)}
+.wabi-week-timeline-scroll{flex:1;min-height:0;overflow:auto;background:rgba(255,255,255,.18)}
+.wabi-week-timeline-grid{display:grid;grid-template-columns:88px repeat(7,minmax(128px,1fr));min-width:1040px;position:relative;align-items:start}
+.wabi-week-time-gutter,.wabi-week-day{position:relative;min-width:0}
+.wabi-week-time-gutter{position:sticky;left:0;z-index:14;background:var(--bg-elev-0);border-right:1px solid var(--hairline-soft)}
+.wabi-week-day{border-right:1px solid var(--hairline-soft);overflow:hidden;background:var(--bg-elev-0)}
+.wabi-week-day:last-child{border-right:0}
+.wabi-week-time-label{position:absolute;left:0;width:78px;transform:translateY(-50%);padding-right:8px;text-align:right;font-size:9px;font-weight:550;color:var(--text-faint);font-variant-numeric:tabular-nums;z-index:5}
+.wabi-week-time-line{position:absolute;left:0;right:0;border-top:1px solid var(--hairline-soft);pointer-events:none;z-index:4}
+.wabi-week-time-line.gutter{left:78px}
+.wabi-week-block-gutter{position:absolute;left:0;right:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:5px;border-bottom:1px solid var(--hairline-soft);font-size:9px;line-height:1.2;overflow:hidden}
+.wabi-week-block-gutter strong{font-size:10px;margin-bottom:4px}.wabi-week-block-gutter span{font-weight:600;opacity:.85;max-width:78px}
+.wabi-week-block-gutter.blk-a{background:var(--blk-a-bg);color:var(--blk-a-fg)}.wabi-week-block-gutter.blk-b{background:var(--blk-b-bg);color:var(--blk-b-fg)}.wabi-week-block-gutter.blk-c{background:var(--blk-c-bg);color:var(--blk-c-fg)}.wabi-week-block-gutter.blk-d{background:var(--blk-d-bg);color:var(--blk-d-fg)}.wabi-week-block-gutter.blk-e{background:var(--blk-e-bg);color:var(--blk-e-fg)}.wabi-week-block-gutter.blk-f{background:var(--blk-f-bg);color:var(--blk-f-fg)}
+.wabi-week-band.wabi-day-block{position:absolute;left:0;right:0;display:block!important;padding:0!important;min-height:0!important;border:0!important;border-bottom:1px solid var(--hairline-soft)!important;border-radius:0!important;z-index:1;overflow:hidden;color:inherit}
+.wabi-week-band .wabi-day-block-head{position:absolute;top:5px;left:7px;right:7px;z-index:2;pointer-events:none}
+.wabi-week-event{position:absolute;left:5px;right:5px;z-index:9;min-height:23px;pointer-events:auto}
+.wabi-week-event .wabi-task-card{height:100%;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.wabi-week-event.is-tight .wabi-task-card{padding-top:3px;padding-bottom:3px}.wabi-week-event.is-tight .wabi-card-meta{display:none}.wabi-week-event.is-tight .wabi-time-chip{font-size:8px;height:17px;padding:0 4px}
+.wabi-week-event.is-tiny .wabi-task-card{padding:2px 5px 2px 7px}.wabi-week-event.is-tiny .wabi-card-meta{display:none}.wabi-week-event.is-tiny .wabi-time-chip{display:none}.wabi-week-event.is-tiny .wabi-card-check{width:13px;height:13px}.wabi-week-event.is-tiny .wabi-card-title{font-size:10px}
+
+/* Feedback / bug report sheet. */
+.wabi-feedback-scrim{position:fixed;inset:0;z-index:18000;background:rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(3px)}
+.wabi-feedback-card{width:min(620px,92vw);max-height:88vh;overflow:auto;background:var(--glass-strong);border:1px solid var(--glass-stroke);border-radius:22px;box-shadow:var(--sh-pop);backdrop-filter:blur(30px) saturate(170%)}
+.wabi-feedback-head{display:flex;align-items:center;justify-content:space-between;padding:17px 20px 12px;border-bottom:1px solid var(--hairline-soft)}
+.wabi-feedback-head h2{font-size:16px;letter-spacing:-.02em}.wabi-feedback-body{padding:16px 20px;display:flex;flex-direction:column;gap:14px}.wabi-feedback-foot{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:13px 20px 18px;border-top:1px solid var(--hairline-soft)}
+.wabi-feedback-kind{display:grid;grid-template-columns:1fr 1fr;gap:7px}.wabi-feedback-kind button{height:38px;border:1px solid var(--hairline);border-radius:10px;color:var(--text-muted);font-size:11px;font-weight:650;background:rgba(255,255,255,.28)}.wabi-feedback-kind button.is-selected{background:var(--bg-selected);border-color:rgba(91,108,163,.32);color:var(--brand-600)}
+.wabi-feedback-textarea{width:100%;min-height:110px;resize:vertical;padding:10px 11px;border:1px solid var(--hairline);border-radius:11px;background:rgba(255,255,255,.52);color:var(--text);font:inherit;outline:0}.wabi-feedback-textarea:focus{border-color:rgba(91,108,163,.5);box-shadow:0 0 0 3px rgba(91,108,163,.09)}
+.wabi-feedback-capture-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;border:1px solid var(--hairline-soft);border-radius:12px;background:var(--bg-elev-1)}
+.wabi-feedback-capture-note{font-size:10px;color:var(--text-muted);line-height:1.35}.wabi-feedback-preview{display:none;position:relative;border:1px solid var(--hairline);border-radius:12px;overflow:hidden;background:#111;cursor:crosshair;user-select:none}.wabi-feedback-preview.on{display:block}.wabi-feedback-preview canvas{display:block;width:100%;height:auto}.wabi-feedback-selection{position:absolute;border:2px solid #fff;box-shadow:0 0 0 9999px rgba(0,0,0,.38);pointer-events:none;display:none}.wabi-feedback-selection.on{display:block}
+.wabi-feedback-thumb{display:none;align-items:center;gap:9px;padding:8px;border:1px solid var(--hairline-soft);border-radius:11px;background:var(--bg-elev-1)}.wabi-feedback-thumb.on{display:flex}.wabi-feedback-thumb img{width:96px;height:58px;object-fit:cover;border-radius:7px;border:1px solid var(--hairline)}.wabi-feedback-thumb span{font-size:10px;color:var(--text-muted)}
+.wabi-feedback-prototype-note{font-size:9.5px;color:var(--text-faint);line-height:1.35}

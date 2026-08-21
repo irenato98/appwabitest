@@ -1,0 +1,9 @@
+/* La ventana de Nueva actividad conserva su diseño interno; sólo cambia su presentación contextual desde el +. */
+.wabi-create-scrim{align-items:flex-end!important;justify-content:flex-end!important;padding:18px 20px 88px!important;background:rgba(18,19,25,.09)!important;-webkit-backdrop-filter:blur(2px) saturate(104%)!important;backdrop-filter:blur(2px) saturate(104%)!important}
+.wabi-create-scrim .wabi-create-v3{width:min(610px,calc(100vw - 40px))!important;max-height:calc(100vh - 126px)!important;position:relative!important;z-index:4!important;transform-origin:calc(100% - 26px) 100%!important;animation:wabiCreateFromFab .18s cubic-bezier(.2,.8,.2,1) both!important}
+.wabi-create-scrim::after{content:"";position:absolute;right:38px;bottom:78px;width:16px;height:16px;background:var(--glass-strong);border-right:1px solid var(--glass-stroke);border-bottom:1px solid var(--glass-stroke);transform:rotate(45deg);z-index:3;pointer-events:none}
+.wabi-create-scrim.is-closing .wabi-create-v3{animation:wabiCreateToFab .14s ease-in forwards!important}.wabi-create-scrim.is-closing::after{opacity:0;transition:opacity .08s ease}
+@keyframes wabiCreateFromFab{from{opacity:0;transform:translate(20px,30px) scale(.72)}to{opacity:1;transform:none}}@keyframes wabiCreateToFab{from{opacity:1;transform:none}to{opacity:0;transform:translate(20px,30px) scale(.72)}}
+.wabi-create-v3 .wabi-block-choice.is-unavailable,.wabi-create-v3 .wabi-block-choice:disabled{opacity:.38!important;cursor:not-allowed!important;filter:grayscale(.28);transform:none!important;box-shadow:none!important}
+.wabi-plan-inline-error{min-height:14px;margin-top:5px;font-size:10px;line-height:1.35;color:var(--danger-500);font-weight:550}
+.wabi-capture-tools{pointer-events:auto!important;z-index:30010!important}.wabi-capture-tools button{pointer-events:auto!important}
